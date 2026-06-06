@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-PT" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página não encontrada — Renova+</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta name="theme-color" content="#0D0D0D">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@700;900&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      height: 100%;
+      background: #0D0D0D;
+      color: #FFFFFF;
+      font-family: 'Montserrat', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+    }
+    .code {
+      font-family: 'Exo 2', sans-serif;
+      font-size: clamp(6rem, 20vw, 12rem);
+      font-weight: 900;
+      line-height: 1;
+      color: #1A1A1A;
+      position: relative;
+      margin-bottom: 1.5rem;
+      user-select: none;
+    }
+    .code::after {
+      content: '404';
+      position: absolute;
+      inset: 0;
+      color: transparent;
+      -webkit-text-stroke: 2px #A8FF00;
+      opacity: 0.3;
+    }
+    h1 {
+      font-family: 'Exo 2', sans-serif;
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    h1 span { color: #A8FF00; }
+    p {
+      font-size: 1rem;
+      color: #888888;
+      max-width: 420px;
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+    }
+    .btn {
+      display: inline-block;
+      background: #A8FF00;
+      color: #0D0D0D;
+      font-family: 'Exo 2', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 0.9rem 2.5rem;
+      border-radius: 50px;
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(168,255,0,0.3); }
+    .logo {
+      position: fixed;
+      top: 1.5rem;
+      left: 1.5rem;
+      font-family: 'Exo 2', sans-serif;
+      font-weight: 900;
+      font-size: 1.4rem;
+      color: #FFFFFF;
+      text-decoration: none;
+    }
+    .logo span { color: #A8FF00; }
+  </style>
+</head>
+<body>
+  <a href="/" class="logo">Renova<span>+</span></a>
+
+  <div class="code">404</div>
+  <h1>Página <span>não encontrada</span></h1>
+  <p>A página que procura não existe ou foi movida. Volte ao início e encontre tudo o que precisa.</p>
+  <a href="/" class="btn">Voltar ao início</a>
+</body>
+</html>
