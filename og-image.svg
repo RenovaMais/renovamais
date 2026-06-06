@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#0D0D0D"/>
+
+  <!-- Decorative grid lines (subtle) -->
+  <line x1="0" y1="210" x2="1200" y2="210" stroke="#1A1A1A" stroke-width="1"/>
+  <line x1="0" y1="420" x2="1200" y2="420" stroke="#1A1A1A" stroke-width="1"/>
+  <line x1="400" y1="0" x2="400" y2="630" stroke="#1A1A1A" stroke-width="1"/>
+  <line x1="800" y1="0" x2="800" y2="630" stroke="#1A1A1A" stroke-width="1"/>
+
+  <!-- Lime accent bar left -->
+  <rect x="0" y="0" width="8" height="630" fill="#A8FF00"/>
+
+  <!-- Lime accent bar bottom -->
+  <rect x="0" y="622" width="1200" height="8" fill="#A8FF00"/>
+
+  <!-- Logo badge -->
+  <rect x="60" y="60" width="110" height="110" rx="16" fill="#A8FF00"/>
+  <text x="115" y="138" font-family="Arial Black, Arial, sans-serif" font-size="64" font-weight="900" fill="#0D0D0D" text-anchor="middle">R+</text>
+
+  <!-- Brand name -->
+  <text x="60" y="260" font-family="Arial Black, Arial, sans-serif" font-size="80" font-weight="900" fill="#FFFFFF" letter-spacing="-2">Renova</text>
+  <text x="503" y="260" font-family="Arial Black, Arial, sans-serif" font-size="80" font-weight="900" fill="#A8FF00" letter-spacing="-2">+</text>
+
+  <!-- Tagline -->
+  <text x="60" y="330" font-family="Arial, sans-serif" font-size="32" fill="#888888" letter-spacing="2">CONSTRUÇÃO · RENOVAÇÃO · REABILITAÇÃO</text>
+
+  <!-- Divider -->
+  <rect x="60" y="370" width="120" height="4" fill="#A8FF00" rx="2"/>
+
+  <!-- Services -->
+  <text x="60" y="430" font-family="Arial, sans-serif" font-size="26" fill="#CCCCCC">Remodelação de Interiores · Reabilitação de Edifícios</text>
+  <text x="60" y="468" font-family="Arial, sans-serif" font-size="26" fill="#CCCCCC">Obras Chave-na-Mão · Lisboa e Área Metropolitana</text>
+
+  <!-- Website URL -->
+  <text x="60" y="560" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#A8FF00">www.renovamais.pt</text>
+
+  <!-- Phone -->
+  <text x="60" y="600" font-family="Arial, sans-serif" font-size="22" fill="#666666">+351 912 991 081</text>
+
+  <!-- Right side decorative element -->
+  <circle cx="980" cy="315" r="200" fill="none" stroke="#A8FF00" stroke-width="2" opacity="0.15"/>
+  <circle cx="980" cy="315" r="150" fill="none" stroke="#A8FF00" stroke-width="1" opacity="0.1"/>
+  <circle cx="980" cy="315" r="80" fill="#A8FF00" opacity="0.05"/>
+  <text x="980" y="350" font-family="Arial Black, Arial, sans-serif" font-size="120" font-weight="900" fill="#A8FF00" text-anchor="middle" opacity="0.12">R+</text>
+</svg>
