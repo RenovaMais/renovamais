@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-site-verification" content="k3Qufku8hIimiXewrrFMZPFYgIh4U0W-E5-T71fnYRo">
 <title>RenovaMais | Construção e Reabilitação em Lisboa</title>
-<meta name="description" content="Especialistas em renovação, remodelação e reabilitação de imóveis no distrito de Lisboa. Mais de 10 anos de experiência. Orçamento gratuito em 48h.">
+<meta name="description" content="Especialistas em renovação, remodelação e reabilitação de imóveis no distrito de Lisboa. Mais de 10 anos de experiência. Orçamento gratuito e sem compromisso.">
 <meta name="keywords" content="remodelação Lisboa, reabilitação Lisboa, obras Lisboa, construção civil Lisboa, renovação casa">
 <meta name="author" content="RenovaMais Alves Melo, Lda.">
 <meta name="robots" content="index, follow">
@@ -15,7 +15,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://renovamais.pt/">
 <meta property="og:title" content="RenovaMais | Construção e Reabilitação em Lisboa">
-<meta property="og:description" content="Mais de 10 anos a transformar espaços em Lisboa. Orçamento gratuito em 48h.">
+<meta property="og:description" content="Mais de 10 anos a transformar espaços em Lisboa. Orçamento gratuito e sem compromisso.">
 <meta property="og:image" content="https://renovamais.pt/og-image.svg">
 <meta property="og:locale" content="pt_PT">
 <meta property="og:site_name" content="RenovaMais">
@@ -260,14 +260,34 @@ footer{background:var(--bg3);border-top:1px solid var(--border);padding:64px 0 3
 .wa-float svg{width:28px;height:28px;fill:#fff}
 
 /* ===================== COOKIE ===================== */
-#cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:800;background:var(--card2);border-top:1px solid var(--border);padding:20px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;transform:translateY(100%);transition:transform .4s ease}
-#cookie-banner.show{transform:none}
-#cookie-banner p{font-family:'Poppins',sans-serif;font-size:.8rem;color:var(--text2);line-height:1.5;flex:1;min-width:240px}
+#cookie-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:799;opacity:0;pointer-events:none;transition:opacity .3s}
+#cookie-overlay.show{opacity:1;pointer-events:auto}
+#cookie-banner{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(120%);z-index:800;background:var(--card);border:1px solid var(--border);border-radius:8px;padding:28px 32px;width:min(640px,calc(100vw - 32px));box-shadow:0 24px 64px rgba(0,0,0,.4);transition:transform .4s cubic-bezier(.34,1.56,.64,1)}
+#cookie-banner.show{transform:translateX(-50%) translateY(0)}
+.cookie-logo{font-family:'Exo 2',sans-serif;font-size:1rem;font-weight:900;margin-bottom:12px}
+.cookie-logo span{color:var(--accent)}
+#cookie-banner h3{font-family:'Exo 2',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:8px}
+#cookie-banner p{font-family:'Poppins',sans-serif;font-size:.8rem;color:var(--text2);line-height:1.6;margin-bottom:20px}
 #cookie-banner p a{color:var(--accent);text-decoration:underline}
-.cookie-btns{display:flex;gap:8px;flex-shrink:0}
-.cookie-accept{padding:10px 24px;background:var(--accent);color:#0D0D0D;border-radius:3px;font-size:.8rem;font-weight:700}
-.cookie-decline{padding:10px 20px;border:1px solid var(--border);border-radius:3px;font-size:.8rem;color:var(--text2);transition:all .2s}
-.cookie-decline:hover{border-color:var(--text2)}
+.cookie-cats{display:flex;flex-direction:column;gap:8px;margin-bottom:20px;border:1px solid var(--border);border-radius:6px;overflow:hidden}
+.cookie-cat{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:var(--bg2);font-size:.8rem}
+.cookie-cat-info{display:flex;flex-direction:column;gap:2px}
+.cookie-cat strong{font-size:.82rem;font-weight:600}
+.cookie-cat span{font-size:.72rem;color:var(--text3);font-family:'Poppins',sans-serif}
+.cookie-toggle{position:relative;width:40px;height:22px;flex-shrink:0}
+.cookie-toggle input{opacity:0;width:0;height:0}
+.cookie-toggle-slider{position:absolute;inset:0;background:var(--border);border-radius:22px;cursor:pointer;transition:.3s}
+.cookie-toggle-slider::before{content:'';position:absolute;width:16px;height:16px;left:3px;top:3px;background:#fff;border-radius:50%;transition:.3s}
+.cookie-toggle input:checked+.cookie-toggle-slider{background:var(--accent)}
+.cookie-toggle input:checked+.cookie-toggle-slider::before{transform:translateX(18px)}
+.cookie-toggle input:disabled+.cookie-toggle-slider{cursor:not-allowed;opacity:.6}
+.cookie-btns{display:flex;gap:8px;flex-wrap:wrap}
+.cookie-accept-all{padding:11px 24px;background:var(--accent);color:#0D0D0D;border-radius:4px;font-size:.82rem;font-weight:700;flex:1;transition:opacity .2s}
+.cookie-accept-all:hover{opacity:.88}
+.cookie-save{padding:11px 20px;border:1px solid var(--border);border-radius:4px;font-size:.82rem;color:var(--text2);transition:all .2s;flex:1}
+.cookie-save:hover{border-color:var(--text);color:var(--text)}
+.cookie-reject{padding:11px 20px;border:1px solid var(--border);border-radius:4px;font-size:.82rem;color:var(--text3);transition:all .2s}
+.cookie-reject:hover{border-color:var(--text3);color:var(--text2)}
 
 /* ===================== RESPONSIVE ===================== */
 @media(max-width:900px){
@@ -339,12 +359,12 @@ footer{background:var(--bg3);border-top:1px solid var(--border);padding:64px 0 3
   <div class="hero-bg" id="heroBg"></div>
   <div class="container">
     <div class="hero-content">
-      <div class="hero-badge caption"><span data-i18n="hero_badge">Lisboa &amp; Área Metropolitana · Desde 2014</span></div>
+      <div class="hero-badge caption"><span data-i18n="hero_badge">Lisboa &amp; Área Metropolitana · 10+ Anos de Experiência</span></div>
       <h1 class="hero-title">
         <span data-i18n="hero_title1">Renovamos</span>
         <span class="line2" data-i18n="hero_title2">o seu espaço.</span>
       </h1>
-      <p class="hero-desc" data-i18n="hero_desc">Mais de 10 anos a transformar casas e edifícios em Lisboa. Obras de qualidade, prazos cumpridos e orçamento transparente — sempre.</p>
+      <p class="hero-desc" data-i18n="hero_desc">Mais de 10 anos a transformar casas e edifícios em Lisboa. Obras de qualidade, com rigor e orçamento totalmente transparente.</p>
       <div class="hero-btns">
         <a href="#contacto" class="btn btn-primary" data-i18n="hero_cta1">Pedir Orçamento Grátis</a>
         <a href="#portfolio" class="btn btn-outline" data-i18n="hero_cta2">Ver Portfolio</a>
@@ -369,7 +389,7 @@ footer{background:var(--bg3);border-top:1px solid var(--border);padding:64px 0 3
       <em data-i18n="stat_satisfacao">Satisfação</em>
     </div>
     <div class="hero-stat">
-      <strong>48<span>h</span></strong>
+      <strong><span style="font-size:1.4rem;letter-spacing:-.02em">€0</span></strong>
       <em data-i18n="stat_orcamento">Orçamento</em>
     </div>
   </div>
@@ -443,7 +463,7 @@ footer{background:var(--bg3);border-top:1px solid var(--border);padding:64px 0 3
       <div class="servico-arr"></div>
     </div>
     <div class="servico-card">
-      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=70&auto=format&fit=crop" alt="Reabilitação de Fachadas" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=70&auto=format&fit=crop" alt="Reabilitação de Fachadas" loading="lazy">
       <div class="servico-overlay">
         <div class="servico-num">03</div>
         <div class="servico-name" data-i18n="serv3_name">Reabilitação de Fachadas</div>
@@ -470,11 +490,11 @@ footer{background:var(--bg3);border-top:1px solid var(--border);padding:64px 0 3
       <div class="servico-arr"></div>
     </div>
     <div class="servico-card">
-      <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=70&auto=format&fit=crop" alt="Construção Nova" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=70&auto=format&fit=crop" alt="Construção e Ampliações" loading="lazy">
       <div class="servico-overlay">
         <div class="servico-num">06</div>
         <div class="servico-name" data-i18n="serv6_name">Construção e Ampliações</div>
-        <div class="servico-desc" data-i18n="serv6_desc">Construção de raiz, ampliações e obras de estrutura com projecto e licenciamento incluídos.</div>
+        <div class="servico-desc" data-i18n="serv6_desc">Construção de raiz, ampliações e obras de estrutura, em articulação com projecto técnico especializado.</div>
       </div>
       <div class="servico-arr"></div>
     </div>
@@ -492,12 +512,12 @@ footer{background:var(--bg3);border-top:1px solid var(--border);padding:64px 0 3
       <div class="processo-step reveal">
         <div class="step-num"><span>01</span></div>
         <h3 class="step-title" data-i18n="proc1_title">Contacto</h3>
-        <p class="step-desc" data-i18n="proc1_desc">Fale connosco pelo formulário, telefone ou WhatsApp. Respondemos sempre em menos de 24h.</p>
+        <p class="step-desc" data-i18n="proc1_desc">Fale connosco pelo formulário, telefone ou WhatsApp. A nossa equipa responde com a maior brevidade possível.</p>
       </div>
       <div class="processo-step reveal">
         <div class="step-num"><span>02</span></div>
         <h3 class="step-title" data-i18n="proc2_title">Visita e Orçamento</h3>
-        <p class="step-desc" data-i18n="proc2_desc">Deslocamo-nos ao local, avaliamos o espaço e entregamos orçamento detalhado em 48 horas. Gratuito e sem compromisso.</p>
+        <p class="step-desc" data-i18n="proc2_desc">Deslocamo-nos ao local, avaliamos o espaço e entregamos orçamento detalhado e personalizado. Gratuito e sem qualquer compromisso.</p>
       </div>
       <div class="processo-step reveal">
         <div class="step-num"><span>03</span></div>
@@ -507,7 +527,7 @@ footer{background:var(--bg3);border-top:1px solid var(--border);padding:64px 0 3
       <div class="processo-step reveal">
         <div class="step-num"><span>04</span></div>
         <h3 class="step-title" data-i18n="proc4_title">Entrega e Garantia</h3>
-        <p class="step-desc" data-i18n="proc4_desc">Entregamos a obra finalizada e limpa, com garantia de 2 anos em todos os trabalhos realizados.</p>
+        <p class="step-desc" data-i18n="proc4_desc">Entregamos a obra finalizada e limpa, com garantia legal aplicável nos termos da legislação portuguesa em vigor.</p>
       </div>
     </div>
   </div>
@@ -643,13 +663,13 @@ footer{background:var(--bg3);border-top:1px solid var(--border);padding:64px 0 3
       <div class="faq-intro reveal">
         <p class="section-label" data-i18n="faq_label">FAQ</p>
         <h2 class="section-title" data-i18n="faq_title">Perguntas Frequentes</h2>
-        <p class="section-sub" data-i18n="faq_desc">Ainda tem dúvidas? Fale connosco directamente — respondemos em menos de 24 horas.</p>
+        <p class="section-sub" data-i18n="faq_desc">Ainda tem dúvidas? Fale connosco directamente e teremos todo o gosto em esclarecer.</p>
         <a href="#contacto" class="btn btn-primary" style="margin-top:32px" data-i18n="faq_cta">Falar Connosco</a>
       </div>
       <div class="faq-list reveal">
         <div class="faq-item">
           <button class="faq-q"><span data-i18n="faq1_q">Quanto tempo demora um orçamento?</span><span class="faq-icon">+</span></button>
-          <div class="faq-a"><p data-i18n="faq1_a">Após a visita ao local, entregamos o orçamento detalhado em até 48 horas. O serviço de orçamentação é completamente gratuito e sem qualquer compromisso da sua parte.</p></div>
+          <div class="faq-a"><p data-i18n="faq1_a">Após a visita ao local, elaboramos um orçamento detalhado e personalizado, enviado com a maior brevidade possível. O serviço de orçamentação é completamente gratuito e sem qualquer compromisso da sua parte.</p></div>
         </div>
         <div class="faq-item">
           <button class="faq-q"><span data-i18n="faq2_q">Trabalham em todo o distrito de Lisboa?</span><span class="faq-icon">+</span></button>
@@ -657,15 +677,15 @@ footer{background:var(--bg3);border-top:1px solid var(--border);padding:64px 0 3
         </div>
         <div class="faq-item">
           <button class="faq-q"><span data-i18n="faq3_q">Que garantia oferecem nos trabalhos?</span><span class="faq-icon">+</span></button>
-          <div class="faq-a"><p data-i18n="faq3_a">Todos os trabalhos realizados pela RenovaMais têm garantia mínima de 2 anos. Em caso de qualquer anomalia detectada após a obra, deslocamo-nos sem custos adicionais.</p></div>
+          <div class="faq-a"><p data-i18n="faq3_a">As nossas obras são abrangidas pela garantia legal prevista no Código Civil Português. Nos termos do artigo 1225.º, o empreiteiro responde pelos defeitos da obra durante 5 anos após a entrega, tratando-se de imóvel destinado a longa duração. O cliente deve denunciar qualquer defeito no prazo de 1 ano após a sua detecção. As condições específicas de cada trabalho ficam definidas no contrato de empreitada.</p></div>
         </div>
         <div class="faq-item">
           <button class="faq-q"><span data-i18n="faq4_q">É necessário sair de casa durante as obras?</span><span class="faq-icon">+</span></button>
           <div class="faq-a"><p data-i18n="faq4_a">Depende do tipo e extensão da obra. Para remodelações completas recomendamos que sim, para obras parcelares ou de menor dimensão geralmente não é necessário. Avaliamos caso a caso.</p></div>
         </div>
         <div class="faq-item">
-          <button class="faq-q"><span data-i18n="faq5_q">Tratam do licenciamento e papelada?</span><span class="faq-icon">+</span></button>
-          <div class="faq-a"><p data-i18n="faq5_a">Sim. Nos projectos que exigem licenciamento municipal (ampliações, alterações estruturais, etc.) trabalhamos com arquitectos e técnicos parceiros e tratamos de toda a documentação necessária.</p></div>
+          <button class="faq-q"><span data-i18n="faq5_q">Tratam do licenciamento e processos camarários?</span><span class="faq-icon">+</span></button>
+          <div class="faq-a"><p data-i18n="faq5_a">O licenciamento e os processos administrativos junto das entidades competentes são da exclusiva responsabilidade do dono da obra (cliente). Nos casos de Gestão de Obra completa — nomeadamente para clientes não residentes em Portugal — podemos, a pedido expresso, coordenar com arquitectos e técnicos especializados. Consulte-nos para mais informação sobre este serviço específico.</p></div>
         </div>
         <div class="faq-item">
           <button class="faq-q"><span data-i18n="faq6_q">Que formas de pagamento aceitam?</span><span class="faq-icon">+</span></button>
@@ -751,6 +771,14 @@ footer{background:var(--bg3);border-top:1px solid var(--border);padding:64px 0 3
               <label for="mensagem" data-i18n="form_mensagem">Descreva a sua obra</label>
               <textarea id="mensagem" name="mensagem" required placeholder="Ex: Quero remodelar a cozinha e a casa de banho de um T2 em Lisboa..."></textarea>
             </div>
+            <div class="form-group" style="flex-direction:row;align-items:flex-start;gap:10px;margin-bottom:12px">
+              <input type="checkbox" id="newsletter" name="newsletter" value="sim" style="margin-top:3px;accent-color:var(--accent);width:16px;height:16px;flex-shrink:0">
+              <label for="newsletter" style="font-size:.78rem;text-transform:none;letter-spacing:0;color:var(--text2);cursor:pointer" data-i18n="form_newsletter">Aceito receber informações e novidades da RenovaMais por email. Pode cancelar a qualquer momento.</label>
+            </div>
+            <div class="form-group" style="flex-direction:row;align-items:flex-start;gap:10px;margin-bottom:24px">
+              <input type="checkbox" id="rgpd" name="rgpd" value="aceito" required style="margin-top:3px;accent-color:var(--accent);width:16px;height:16px;flex-shrink:0">
+              <label for="rgpd" style="font-size:.78rem;text-transform:none;letter-spacing:0;color:var(--text2);cursor:pointer" data-i18n="form_rgpd">Li e aceito a <a href="/privacy.html" style="color:var(--accent);text-decoration:underline">Política de Privacidade</a>. Os meus dados serão utilizados exclusivamente para resposta ao pedido de orçamento. *</label>
+            </div>
             <button type="submit" class="btn btn-primary form-submit" data-i18n="form_submit">Pedir Orçamento Gratuito →</button>
           </form>
         </div>
@@ -818,11 +846,38 @@ footer{background:var(--bg3);border-top:1px solid var(--border);padding:64px 0 3
 </a>
 
 <!-- COOKIE BANNER -->
-<div id="cookie-banner">
-  <p data-i18n="cookie_text">Utilizamos cookies para melhorar a sua experiência. Ao continuar a navegar, aceita a nossa <a href="/privacy.html">Política de Privacidade</a>.</p>
+<div id="cookie-overlay"></div>
+<div id="cookie-banner" role="dialog" aria-modal="true" aria-label="Preferências de cookies">
+  <div class="cookie-logo">Renova<span>Mais</span></div>
+  <h3 data-i18n="cookie_title">Utilizamos cookies</h3>
+  <p data-i18n="cookie_text">Usamos cookies para melhorar a sua experiência, analisar o tráfego e personalizar conteúdo. Pode gerir as suas preferências abaixo. Consulte a nossa <a href="/privacy.html">Política de Privacidade</a>.</p>
+  <div class="cookie-cats">
+    <div class="cookie-cat">
+      <div class="cookie-cat-info">
+        <strong data-i18n="cookie_cat1">🔒 Necessários</strong>
+        <span data-i18n="cookie_cat1_desc">Essenciais para o funcionamento do site. Não podem ser desactivados.</span>
+      </div>
+      <label class="cookie-toggle"><input type="checkbox" checked disabled><span class="cookie-toggle-slider"></span></label>
+    </div>
+    <div class="cookie-cat">
+      <div class="cookie-cat-info">
+        <strong data-i18n="cookie_cat2">📊 Analíticos</strong>
+        <span data-i18n="cookie_cat2_desc">Ajudam-nos a perceber como os visitantes interagem com o site (Google Analytics).</span>
+      </div>
+      <label class="cookie-toggle"><input type="checkbox" id="ckAnalytics"><span class="cookie-toggle-slider"></span></label>
+    </div>
+    <div class="cookie-cat">
+      <div class="cookie-cat-info">
+        <strong data-i18n="cookie_cat3">📣 Marketing</strong>
+        <span data-i18n="cookie_cat3_desc">Permitem mostrar anúncios relevantes e medir o desempenho de campanhas.</span>
+      </div>
+      <label class="cookie-toggle"><input type="checkbox" id="ckMarketing"><span class="cookie-toggle-slider"></span></label>
+    </div>
+  </div>
   <div class="cookie-btns">
-    <button class="cookie-accept" id="cookieAccept" data-i18n="cookie_accept">Aceitar</button>
-    <button class="cookie-decline" id="cookieDecline" data-i18n="cookie_decline">Recusar</button>
+    <button class="cookie-accept-all" id="cookieAcceptAll" data-i18n="cookie_accept">Aceitar Todos</button>
+    <button class="cookie-save" id="cookieSave" data-i18n="cookie_save">Guardar Preferências</button>
+    <button class="cookie-reject" id="cookieReject" data-i18n="cookie_decline">Recusar</button>
   </div>
 </div>
 
@@ -831,7 +886,7 @@ footer{background:var(--bg3);border-top:1px solid var(--border);padding:64px 0 3
 const T = {
   pt: {
     nav_sobre:'Sobre', nav_servicos:'Serviços', nav_portfolio:'Portfolio', nav_faq:'FAQ', nav_contacto:'Contacto', nav_cta:'Orçamento Grátis',
-    hero_badge:'Lisboa & Área Metropolitana · Desde 2014', hero_title1:'Renovamos', hero_title2:'o seu espaço.', hero_desc:'Mais de 10 anos a transformar casas e edifícios em Lisboa. Obras de qualidade, prazos cumpridos e orçamento transparente — sempre.',
+    hero_badge:'Lisboa & Área Metropolitana · 10+ Anos de Experiência', hero_title1:'Renovamos', hero_title2:'o seu espaço.', hero_desc:'Mais de 10 anos a transformar casas e edifícios em Lisboa. Obras de qualidade, com rigor e orçamento totalmente transparente.',
     hero_cta1:'Pedir Orçamento Grátis', hero_cta2:'Ver Portfolio',
     stat_anos:'Anos Exp.', stat_obras:'Obras', stat_satisfacao:'Satisfação', stat_orcamento:'Orçamento',
     sobre_label:'Sobre Nós', sobre_title:'Uma equipa com alma de construtor', sobre_badge:'Anos de Excelência',
@@ -849,10 +904,10 @@ const T = {
     serv5_name:'Pavimentos e Azulejos', serv5_desc:'Aplicação de cerâmica, soalho, microcimento, vinílicos e outros pavimentos decorativos.',
     serv6_name:'Construção e Ampliações', serv6_desc:'Construção de raiz, ampliações e obras de estrutura com projecto e licenciamento incluídos.',
     proc_label:'Como Trabalhamos', proc_title:'O nosso processo',
-    proc1_title:'Contacto', proc1_desc:'Fale connosco pelo formulário, telefone ou WhatsApp. Respondemos sempre em menos de 24h.',
-    proc2_title:'Visita e Orçamento', proc2_desc:'Deslocamo-nos ao local, avaliamos o espaço e entregamos orçamento detalhado em 48 horas. Gratuito e sem compromisso.',
+    proc1_title:'Contacto', proc1_desc:'Fale connosco pelo formulário, telefone ou WhatsApp. A nossa equipa responde com a maior brevidade possível.',
+    proc2_title:'Visita e Orçamento', proc2_desc:'Deslocamo-nos ao local, avaliamos o espaço e entregamos orçamento detalhado e personalizado. Gratuito e sem qualquer compromisso.',
     proc3_title:'Execução da Obra', proc3_desc:'A nossa equipa inicia os trabalhos na data acordada, com acompanhamento diário e actualizações regulares.',
-    proc4_title:'Entrega e Garantia', proc4_desc:'Entregamos a obra finalizada e limpa, com garantia de 2 anos em todos os trabalhos realizados.',
+    proc4_title:'Entrega e Garantia', proc4_desc:'Entregamos a obra finalizada e limpa, com garantia legal aplicável nos termos da legislação portuguesa em vigor.',
     port_label:'Portfolio', port_title:'Antes & Depois', port_desc:'Arraste o divisor para comparar o estado inicial com o resultado final das nossas obras.',
     ba1_title:'Apartamento · Alfama, Lisboa', ba1_type:'Remodelação Completa',
     ba2_title:'Moradia · Sintra', ba2_type:'Reabilitação de Fachada',
@@ -863,24 +918,30 @@ const T = {
     testi1_text:'"Remodelaram o nosso apartamento em Alfama de cima a baixo. Prazos cumpridos, trabalho impecável e sempre disponíveis para tirar dúvidas. Recomendo sem hesitar."',
     testi2_text:'"Fizeram a reabilitação completa da nossa moradia em Sintra. Da fachada aos interiores, o resultado superou todas as expectativas. Profissionalismo exemplar."',
     testi3_text:'"Orçamento rápido, transparente e sem surpresas. A equipa da RenovaMais transformou o nosso escritório num espaço moderno e funcional. 10 estrelas se pudesse."',
-    faq_label:'FAQ', faq_title:'Perguntas Frequentes', faq_desc:'Ainda tem dúvidas? Fale connosco directamente — respondemos em menos de 24 horas.', faq_cta:'Falar Connosco',
-    faq1_q:'Quanto tempo demora um orçamento?', faq1_a:'Após a visita ao local, entregamos o orçamento detalhado em até 48 horas. O serviço de orçamentação é completamente gratuito e sem qualquer compromisso da sua parte.',
-    faq2_q:'Trabalham em todo o distrito de Lisboa?', faq2_a:'Sim. A nossa área de actuação cobre Lisboa, Sintra, Cascais, Oeiras, Loures, Amadora e Setúbal. Para projectos noutras regiões, consulte-nos primeiro.',
-    faq3_q:'Que garantia oferecem nos trabalhos?', faq3_a:'Todos os trabalhos realizados pela RenovaMais têm garantia mínima de 2 anos. Em caso de qualquer anomalia detectada após a obra, deslocamo-nos sem custos adicionais.',
-    faq4_q:'É necessário sair de casa durante as obras?', faq4_a:'Depende do tipo e extensão da obra. Para remodelações completas recomendamos que sim, para obras parcelares ou de menor dimensão geralmente não é necessário. Avaliamos caso a caso.',
-    faq5_q:'Tratam do licenciamento e papelada?', faq5_a:'Sim. Nos projectos que exigem licenciamento municipal (ampliações, alterações estruturais, etc.) trabalhamos com arquitectos e técnicos parceiros e tratamos de toda a documentação necessária.',
-    faq6_q:'Que formas de pagamento aceitam?', faq6_a:'Aceitamos transferência bancária e numerário. O pagamento é faseado: sinal na aprovação do orçamento, entregas intercalares conforme o avanço da obra, e pagamento final na entrega.',
+    faq_label:'FAQ', faq_title:'Perguntas Frequentes', faq_desc:'Ainda tem dúvidas? Fale connosco directamente e teremos todo o gosto em esclarecer.', faq_cta:'Falar Connosco',
+    faq1_q:'O orçamento é gratuito?', faq1_a:'Sim. O serviço de orçamentação é completamente gratuito e sem qualquer compromisso da sua parte. Após a visita ao local, elaboramos um orçamento detalhado e personalizado, enviado com a maior brevidade possível.',
+    faq2_q:'Trabalham em todo o distrito de Lisboa?', faq2_a:'A nossa área de actuação principal cobre Lisboa, Sintra, Cascais, Oeiras, Loures e Amadora. Para projectos noutras regiões, consulte-nos para avaliarmos a viabilidade.',
+    faq3_q:'Qual a garantia legal das obras?', faq3_a:'As nossas obras são abrangidas pela garantia legal prevista no Código Civil Português. Nos termos do artigo 1225.º, o empreiteiro responde pelos defeitos durante 5 anos após a entrega, para imóveis destinados a longa duração. O cliente deve denunciar qualquer defeito no prazo de 1 ano após a sua detecção. As condições específicas ficam definidas no contrato de empreitada.',
+    faq4_q:'É necessário sair de casa durante as obras?', faq4_a:'Depende do tipo e extensão da obra. Para remodelações completas geralmente recomendamos a saída temporária; para obras parcelares ou de menor dimensão poderá não ser necessário. Cada situação é analisada individualmente.',
+    faq5_q:'Tratam do licenciamento e processos camarários?', faq5_a:'O licenciamento e processos administrativos são da responsabilidade do dono da obra. Nos casos de Gestão de Obra completa — nomeadamente para clientes não residentes em Portugal — podemos, a pedido, coordenar com técnicos especializados. Consulte-nos para mais informação.',
+    faq6_q:'Que formas de pagamento aceitam?', faq6_a:'Aceitamos transferência bancária e numerário. O pagamento é habitualmente faseado: entrada na aprovação do orçamento e liquidações intercalares conforme o avanço da obra, com condições definidas no contrato.',
     cont_label:'Contacto', cont_title:'Vamos falar sobre a sua obra', cont_desc:'Preencha o formulário ou contacte-nos directamente. Respondemos sempre em menos de 24 horas.',
     cont_telefone:'Telefone / WhatsApp', cont_zona:'Zona de Actuação', cont_horario:'Horário', cont_horas:'Seg – Sex: 8h00 – 18h00',
     form_nome:'Nome', form_telefone:'Telefone', form_email:'Email', form_servico:'Tipo de Obra', form_selecione:'Selecione o serviço', form_outro:'Outro', form_mensagem:'Descreva a sua obra', form_submit:'Pedir Orçamento Gratuito →',
     footer_about:'Especialistas em renovação, remodelação e reabilitação de imóveis em Lisboa e área metropolitana. Mais de 10 anos de excelência.',
     footer_servicos:'Serviços', footer_empresa:'Empresa', footer_contacto:'Contacto', footer_rights:'Todos os direitos reservados.', footer_privacy:'Política de Privacidade', footer_rgpd:'RGPD',
-    cookie_text:'Utilizamos cookies para melhorar a sua experiência. Ao continuar a navegar, aceita a nossa <a href="/privacy.html">Política de Privacidade</a>.',
-    cookie_accept:'Aceitar', cookie_decline:'Recusar'
+    cookie_title:'Utilizamos cookies',
+    cookie_text:'Usamos cookies para melhorar a sua experiência, analisar o tráfego e personalizar conteúdo. Pode gerir as suas preferências abaixo. Consulte a nossa <a href="/privacy.html">Política de Privacidade</a>.',
+    cookie_cat1:'🔒 Necessários', cookie_cat1_desc:'Essenciais para o funcionamento do site. Não podem ser desactivados.',
+    cookie_cat2:'📊 Analíticos', cookie_cat2_desc:'Ajudam-nos a perceber como os visitantes interagem com o site (Google Analytics).',
+    cookie_cat3:'📣 Marketing', cookie_cat3_desc:'Permitem mostrar anúncios relevantes e medir o desempenho de campanhas.',
+    cookie_accept:'Aceitar Todos', cookie_save:'Guardar Preferências', cookie_decline:'Recusar',
+    form_newsletter:'Aceito receber informações e novidades da RenovaMais por email. Pode cancelar a qualquer momento.',
+    form_rgpd:'Li e aceito a <a href="/privacy.html" style="color:var(--accent);text-decoration:underline">Política de Privacidade</a>. Os meus dados serão utilizados exclusivamente para resposta ao pedido de orçamento. *'
   },
   en: {
     nav_sobre:'About', nav_servicos:'Services', nav_portfolio:'Portfolio', nav_faq:'FAQ', nav_contacto:'Contact', nav_cta:'Free Quote',
-    hero_badge:'Lisbon & Metropolitan Area · Since 2014', hero_title1:'We renovate', hero_title2:'your space.', hero_desc:'Over 10 years transforming homes and buildings in Lisbon. Quality work, on-time delivery and transparent pricing — always.',
+    hero_badge:'Lisbon & Metropolitan Area · 10+ Years of Experience', hero_title1:'We renovate', hero_title2:'your space.', hero_desc:'Over 10 years transforming homes and buildings in Lisbon. Quality work, rigour and fully transparent pricing.',
     hero_cta1:'Request Free Quote', hero_cta2:'View Portfolio',
     stat_anos:'Yrs Exp.', stat_obras:'Projects', stat_satisfacao:'Satisfaction', stat_orcamento:'Quote',
     sobre_label:'About Us', sobre_title:'A team with a builder\'s soul', sobre_badge:'Years of Excellence',
@@ -896,12 +957,12 @@ const T = {
     serv3_name:'Façade Rehabilitation', serv3_desc:'Restoration and renovation of façades with thermal insulation, render and specialist exterior painting.',
     serv4_name:'Painting & Finishes', serv4_desc:'Interior and exterior painting, stucco, plasterboard and decorative coatings.',
     serv5_name:'Flooring & Tiling', serv5_desc:'Installation of ceramic, hardwood, microcement, vinyl and other decorative flooring.',
-    serv6_name:'Construction & Extensions', serv6_desc:'New builds, extensions and structural works with design and licensing included.',
+    serv6_name:'Construction & Extensions', serv6_desc:'New builds, extensions and structural works, in coordination with specialist technical design.',
     proc_label:'How We Work', proc_title:'Our process',
-    proc1_title:'Contact', proc1_desc:'Reach us via form, phone or WhatsApp. We always reply within 24 hours.',
-    proc2_title:'Site Visit & Quote', proc2_desc:'We visit the site, assess the space and deliver a detailed quote within 48 hours. Free and no commitment.',
+    proc1_title:'Contact', proc1_desc:'Reach us via form, phone or WhatsApp. Our team will respond as quickly as possible.',
+    proc2_title:'Site Visit & Quote', proc2_desc:'We visit the site, assess the space and deliver a detailed, personalised quote. Free and with no commitment.',
     proc3_title:'Construction', proc3_desc:'Our team starts work on the agreed date, with daily supervision and regular updates.',
-    proc4_title:'Handover & Warranty', proc4_desc:'We deliver the finished, clean project with a 2-year warranty on all work.',
+    proc4_title:'Handover & Warranty', proc4_desc:'We deliver the finished, clean project with the legal warranty applicable under Portuguese law.',
     port_label:'Portfolio', port_title:'Before & After', port_desc:'Drag the divider to compare the initial condition with the final result of our work.',
     ba1_title:'Apartment · Alfama, Lisbon', ba1_type:'Full Renovation',
     ba2_title:'House · Sintra', ba2_type:'Façade Rehabilitation',
@@ -912,24 +973,30 @@ const T = {
     testi1_text:'"They renovated our Alfama apartment from top to bottom. Deadlines met, impeccable work and always available to answer questions. Highly recommended."',
     testi2_text:'"They completed a full rehabilitation of our Sintra home. From the façade to the interiors, the result exceeded all expectations. Exemplary professionalism."',
     testi3_text:'"Fast, transparent quote with no surprises. The RenovaMais team transformed our office into a modern, functional space. 10 stars if I could."',
-    faq_label:'FAQ', faq_title:'Frequently Asked Questions', faq_desc:'Still have questions? Contact us directly — we reply within 24 hours.', faq_cta:'Talk to Us',
-    faq1_q:'How long does a quote take?', faq1_a:'After visiting the site, we deliver a detailed quote within 48 hours. The quoting service is completely free and with no commitment on your part.',
-    faq2_q:'Do you work across the Lisbon district?', faq2_a:'Yes. Our area covers Lisbon, Sintra, Cascais, Oeiras, Loures, Amadora and Setúbal. For projects in other regions, please enquire first.',
-    faq3_q:'What warranty do you offer?', faq3_a:'All work carried out by RenovaMais has a minimum 2-year warranty. In case of any issue detected after the work, we attend without additional cost.',
-    faq4_q:'Do I need to leave home during the works?', faq4_a:'It depends on the type and extent of the works. For full renovations we recommend it; for partial or smaller works it is generally not necessary. We assess case by case.',
-    faq5_q:'Do you handle licensing and paperwork?', faq5_a:'Yes. For projects requiring municipal licensing (extensions, structural changes, etc.) we work with partner architects and technicians and handle all the necessary documentation.',
-    faq6_q:'What payment methods do you accept?', faq6_a:'We accept bank transfer and cash. Payment is phased: deposit on quote approval, interim payments as work progresses, and final payment on handover.',
+    faq_label:'FAQ', faq_title:'Frequently Asked Questions', faq_desc:'Still have questions? Contact us directly and we\'ll be happy to help.', faq_cta:'Talk to Us',
+    faq1_q:'Is the quote free?', faq1_a:'Yes. The quoting service is completely free and with no commitment. After visiting the site, we prepare a detailed, personalised quote and send it as quickly as possible.',
+    faq2_q:'Do you work across the Lisbon area?', faq2_a:'Our main service area covers Lisbon, Sintra, Cascais, Oeiras, Loures and Amadora. For projects in other regions, please contact us so we can assess the feasibility.',
+    faq3_q:'What legal warranty applies to the works?', faq3_a:'Our works are covered by the legal warranty under Portuguese Civil Code. Under Article 1225, the contractor is liable for defects for 5 years after handover, for buildings intended for long duration. The client must report any defect within 1 year of discovery. Specific conditions are defined in the construction contract.',
+    faq4_q:'Do I need to leave home during the works?', faq4_a:'It depends on the type and extent of the works. For full renovations we generally recommend it; for partial or smaller works it may not be necessary. Each situation is assessed individually.',
+    faq5_q:'Do you handle licensing and municipal processes?', faq5_a:'Licensing and administrative processes are the responsibility of the project owner (client). For full project management — particularly for clients not resident in Portugal — we can, upon express request, coordinate with specialist technicians. Please contact us for more information on this specific service.',
+    faq6_q:'What payment methods do you accept?', faq6_a:'We accept bank transfer and cash. Payment is typically phased: an initial deposit on quote approval and interim payments as work progresses, with conditions defined in the contract.',
     cont_label:'Contact', cont_title:'Let\'s talk about your project', cont_desc:'Fill in the form or contact us directly. We always reply within 24 hours.',
     cont_telefone:'Phone / WhatsApp', cont_zona:'Service Area', cont_horario:'Hours', cont_horas:'Mon – Fri: 8am – 6pm',
     form_nome:'Name', form_telefone:'Phone', form_email:'Email', form_servico:'Type of Work', form_selecione:'Select service', form_outro:'Other', form_mensagem:'Describe your project', form_submit:'Request Free Quote →',
     footer_about:'Specialists in renovation, refurbishment and rehabilitation of properties in Lisbon and the metropolitan area. Over 10 years of excellence.',
     footer_servicos:'Services', footer_empresa:'Company', footer_contacto:'Contact', footer_rights:'All rights reserved.', footer_privacy:'Privacy Policy', footer_rgpd:'GDPR',
-    cookie_text:'We use cookies to improve your experience. By continuing to browse, you accept our <a href="/privacy.html">Privacy Policy</a>.',
-    cookie_accept:'Accept', cookie_decline:'Decline'
+    cookie_title:'We use cookies',
+    cookie_text:'We use cookies to improve your experience, analyse traffic and personalise content. Manage your preferences below. See our <a href="/privacy.html">Privacy Policy</a>.',
+    cookie_cat1:'🔒 Necessary', cookie_cat1_desc:'Essential for the site to work. Cannot be disabled.',
+    cookie_cat2:'📊 Analytics', cookie_cat2_desc:'Help us understand how visitors interact with the site (Google Analytics).',
+    cookie_cat3:'📣 Marketing', cookie_cat3_desc:'Allow us to show relevant ads and measure campaign performance.',
+    cookie_accept:'Accept All', cookie_save:'Save Preferences', cookie_decline:'Reject',
+    form_newsletter:'I agree to receive news and updates from RenovaMais by email. You can unsubscribe at any time.',
+    form_rgpd:'I have read and accept the <a href="/privacy.html" style="color:var(--accent);text-decoration:underline">Privacy Policy</a>. My data will be used solely to respond to this quote request. *'
   },
   es: {
     nav_sobre:'Sobre', nav_servicos:'Servicios', nav_portfolio:'Portfolio', nav_faq:'FAQ', nav_contacto:'Contacto', nav_cta:'Presupuesto Gratis',
-    hero_badge:'Lisboa y Área Metropolitana · Desde 2014', hero_title1:'Renovamos', hero_title2:'su espacio.', hero_desc:'Más de 10 años transformando hogares y edificios en Lisboa. Obras de calidad, plazos cumplidos y presupuesto transparente — siempre.',
+    hero_badge:'Lisboa y Área Metropolitana · 10+ Años de Experiencia', hero_title1:'Renovamos', hero_title2:'su espacio.', hero_desc:'Más de 10 años transformando hogares y edificios en Lisboa. Obras de calidad, con rigor y presupuesto totalmente transparente.',
     hero_cta1:'Solicitar Presupuesto', hero_cta2:'Ver Portfolio',
     stat_anos:'Años Exp.', stat_obras:'Obras', stat_satisfacao:'Satisfacción', stat_orcamento:'Presupuesto',
     sobre_label:'Sobre Nosotros', sobre_title:'Un equipo con alma de constructor', sobre_badge:'Años de Excelencia',
@@ -945,12 +1012,12 @@ const T = {
     serv3_name:'Rehabilitación de Fachadas', serv3_desc:'Restauración y renovación de fachadas con aislamiento térmico, revoco y pintura exterior especializada.',
     serv4_name:'Pinturas y Acabados', serv4_desc:'Pintura interior y exterior, estuco, pladur y revestimientos decorativos de excelencia.',
     serv5_name:'Pavimentos y Azulejos', serv5_desc:'Instalación de cerámica, parquet, microcemento, vinílicos y otros pavimentos decorativos.',
-    serv6_name:'Construcción y Ampliaciones', serv6_desc:'Obra nueva, ampliaciones y obras estructurales con proyecto y licencias incluidos.',
+    serv6_name:'Construcción y Ampliaciones', serv6_desc:'Obra nueva, ampliaciones y obras estructurales, en coordinación con proyecto técnico especializado.',
     proc_label:'Cómo Trabajamos', proc_title:'Nuestro proceso',
-    proc1_title:'Contacto', proc1_desc:'Contáctenos por formulario, teléfono o WhatsApp. Respondemos siempre en menos de 24h.',
-    proc2_title:'Visita y Presupuesto', proc2_desc:'Visitamos el lugar, evaluamos el espacio y entregamos presupuesto detallado en 48 horas. Gratuito y sin compromiso.',
-    proc3_title:'Ejecución de la Obra', proc3_desc:'Nuestro equipo inicia los trabajos en la fecha acordada, con seguimiento diario.',
-    proc4_title:'Entrega y Garantía', proc4_desc:'Entregamos la obra terminada y limpia, con garantía de 2 años en todos los trabajos.',
+    proc1_title:'Contacto', proc1_desc:'Contáctenos por formulario, teléfono o WhatsApp. Nuestro equipo responde con la mayor brevedad posible.',
+    proc2_title:'Visita y Presupuesto', proc2_desc:'Visitamos el lugar, evaluamos el espacio y elaboramos un presupuesto detallado y personalizado. Gratuito y sin compromiso.',
+    proc3_title:'Ejecución de la Obra', proc3_desc:'Nuestro equipo inicia los trabajos en la fecha acordada, con seguimiento diario y actualizaciones regulares.',
+    proc4_title:'Entrega y Garantía', proc4_desc:'Entregamos la obra terminada y limpia, con la garantía legal aplicable según la legislación portuguesa vigente.',
     port_label:'Portfolio', port_title:'Antes y Después', port_desc:'Arrastre el divisor para comparar el estado inicial con el resultado final de nuestras obras.',
     ba1_title:'Apartamento · Alfama, Lisboa', ba1_type:'Remodelación Completa',
     ba2_title:'Chalet · Sintra', ba2_type:'Rehabilitación de Fachada',
@@ -961,20 +1028,26 @@ const T = {
     testi1_text:'"Remodelaron nuestro apartamento en Alfama de arriba a abajo. Plazos cumplidos, trabajo impecable y siempre disponibles. Lo recomiendo sin dudar."',
     testi2_text:'"Hicieron la rehabilitación completa de nuestra casa en Sintra. Desde la fachada hasta los interiores, el resultado superó todas las expectativas."',
     testi3_text:'"Presupuesto rápido, transparente y sin sorpresas. El equipo de RenovaMais transformó nuestra oficina en un espacio moderno y funcional."',
-    faq_label:'FAQ', faq_title:'Preguntas Frecuentes', faq_desc:'¿Aún tiene dudas? Contáctenos directamente — respondemos en menos de 24 horas.', faq_cta:'Hablar con Nosotros',
-    faq1_q:'¿Cuánto tiempo tarda un presupuesto?', faq1_a:'Tras la visita al lugar, entregamos el presupuesto detallado en hasta 48 horas. El servicio de presupuestación es completamente gratuito y sin ningún compromiso.',
-    faq2_q:'¿Trabajan en todo el distrito de Lisboa?', faq2_a:'Sí. Nuestra área cubre Lisboa, Sintra, Cascais, Oeiras, Loures, Amadora y Setúbal. Para proyectos en otras regiones, consúltenos primero.',
-    faq3_q:'¿Qué garantía ofrecen en los trabajos?', faq3_a:'Todos los trabajos realizados por RenovaMais tienen garantía mínima de 2 años. En caso de cualquier anomalía detectada tras la obra, acudimos sin costes adicionales.',
-    faq4_q:'¿Es necesario salir de casa durante las obras?', faq4_a:'Depende del tipo y alcance de la obra. Para remodelaciones completas lo recomendamos; para obras parciales o de menor dimensión generalmente no es necesario.',
-    faq5_q:'¿Se encargan de la licencia y el papeleo?', faq5_a:'Sí. En proyectos que requieren licencia municipal trabajamos con arquitectos y técnicos colaboradores y nos encargamos de toda la documentación necesaria.',
-    faq6_q:'¿Qué formas de pago aceptan?', faq6_a:'Aceptamos transferencia bancaria y efectivo. El pago es escalonado: señal en la aprobación del presupuesto, pagos intermedios según avance y pago final en la entrega.',
+    faq_label:'FAQ', faq_title:'Preguntas Frecuentes', faq_desc:'¿Aún tiene dudas? Contáctenos directamente y estaremos encantados de ayudarle.', faq_cta:'Hablar con Nosotros',
+    faq1_q:'¿El presupuesto es gratuito?', faq1_a:'Sí. El servicio de presupuestación es completamente gratuito y sin ningún compromiso. Tras la visita al lugar, elaboramos un presupuesto detallado y personalizado que enviamos con la mayor brevedad posible.',
+    faq2_q:'¿Trabajan en el área de Lisboa?', faq2_a:'Nuestra área principal cubre Lisboa, Sintra, Cascais, Oeiras, Loures y Amadora. Para proyectos en otras regiones, consúltenos para evaluar la viabilidad.',
+    faq3_q:'¿Qué garantía legal aplica a las obras?', faq3_a:'Nuestras obras están cubiertas por la garantía legal del Código Civil Portugués. Según el artículo 1225, el contratista responde por defectos durante 5 años tras la entrega, para inmuebles de larga duración. El cliente debe denunciar cualquier defecto en el plazo de 1 año desde su detección.',
+    faq4_q:'¿Es necesario salir de casa durante las obras?', faq4_a:'Depende del tipo y alcance de la obra. Para remodelaciones completas generalmente lo recomendamos; para obras parciales puede no ser necesario. Cada situación se analiza individualmente.',
+    faq5_q:'¿Se encargan del licenciamiento y trámites?', faq5_a:'El licenciamiento y los trámites administrativos son responsabilidad del propietario. En casos de Gestión de Obra completa — especialmente para clientes no residentes en Portugal — podemos, bajo solicitud expresa, coordinar con técnicos especializados. Consúltenos.',
+    faq6_q:'¿Qué formas de pago aceptan?', faq6_a:'Aceptamos transferencia bancaria y efectivo. El pago es habitualmente escalonado: entrada en la aprobación del presupuesto y pagos intermedios según el avance, con condiciones definidas en el contrato.',
     cont_label:'Contacto', cont_title:'Hablemos sobre su obra', cont_desc:'Rellene el formulario o contáctenos directamente. Siempre respondemos en menos de 24 horas.',
     cont_telefone:'Teléfono / WhatsApp', cont_zona:'Área de Actuación', cont_horario:'Horario', cont_horas:'Lun – Vie: 8h00 – 18h00',
     form_nome:'Nombre', form_telefone:'Teléfono', form_email:'Email', form_servico:'Tipo de Obra', form_selecione:'Seleccione el servicio', form_outro:'Otro', form_mensagem:'Describa su obra', form_submit:'Solicitar Presupuesto →',
     footer_about:'Especialistas en renovación, remodelación y rehabilitación de inmuebles en Lisboa y área metropolitana. Más de 10 años de excelencia.',
     footer_servicos:'Servicios', footer_empresa:'Empresa', footer_contacto:'Contacto', footer_rights:'Todos los derechos reservados.', footer_privacy:'Política de Privacidad', footer_rgpd:'RGPD',
-    cookie_text:'Usamos cookies para mejorar su experiencia. Al continuar navegando, acepta nuestra <a href="/privacy.html">Política de Privacidad</a>.',
-    cookie_accept:'Aceptar', cookie_decline:'Rechazar'
+    cookie_title:'Usamos cookies',
+    cookie_text:'Usamos cookies para mejorar su experiencia, analizar el tráfico y personalizar el contenido. Gestione sus preferencias abajo. Consulte nuestra <a href="/privacy.html">Política de Privacidad</a>.',
+    cookie_cat1:'🔒 Necesarios', cookie_cat1_desc:'Esenciales para el funcionamiento del sitio. No se pueden desactivar.',
+    cookie_cat2:'📊 Analíticos', cookie_cat2_desc:'Nos ayudan a entender cómo los visitantes interactúan con el sitio (Google Analytics).',
+    cookie_cat3:'📣 Marketing', cookie_cat3_desc:'Permiten mostrar anuncios relevantes y medir el rendimiento de campañas.',
+    cookie_accept:'Aceptar Todos', cookie_save:'Guardar Preferencias', cookie_decline:'Rechazar',
+    form_newsletter:'Acepto recibir información y novedades de RenovaMais por email. Puede darse de baja en cualquier momento.',
+    form_rgpd:'He leído y acepto la <a href="/privacy.html" style="color:var(--accent);text-decoration:underline">Política de Privacidad</a>. Mis datos se utilizarán exclusivamente para responder a esta solicitud. *'
   }
 };
 
@@ -1066,9 +1139,19 @@ document.querySelectorAll('.faq-item').forEach(item => {
 
 // ===================== COOKIE BANNER =====================
 const banner = document.getElementById('cookie-banner');
-if (!localStorage.getItem('rm_cookies')) setTimeout(() => banner.classList.add('show'), 1500);
-document.getElementById('cookieAccept').addEventListener('click', () => { localStorage.setItem('rm_cookies','accepted'); banner.classList.remove('show'); gtag('consent','update',{analytics_storage:'granted'}); });
-document.getElementById('cookieDecline').addEventListener('click', () => { localStorage.setItem('rm_cookies','declined'); banner.classList.remove('show'); });
+const overlay = document.getElementById('cookie-overlay');
+function showCookieBanner() { banner.classList.add('show'); overlay.classList.add('show'); }
+function hideCookieBanner() { banner.classList.remove('show'); overlay.classList.remove('show'); }
+function saveCookieConsent(analytics, marketing) {
+  const prefs = { necessary:true, analytics, marketing, ts: Date.now(), v:'1' };
+  localStorage.setItem('rm_cookies', JSON.stringify(prefs));
+  gtag('consent','update',{ analytics_storage: analytics?'granted':'denied', ad_storage: marketing?'granted':'denied' });
+  hideCookieBanner();
+}
+if (!localStorage.getItem('rm_cookies')) setTimeout(showCookieBanner, 1800);
+document.getElementById('cookieAcceptAll').addEventListener('click', () => { document.getElementById('ckAnalytics').checked=true; document.getElementById('ckMarketing').checked=true; saveCookieConsent(true,true); });
+document.getElementById('cookieSave').addEventListener('click', () => saveCookieConsent(document.getElementById('ckAnalytics').checked, document.getElementById('ckMarketing').checked));
+document.getElementById('cookieReject').addEventListener('click', () => saveCookieConsent(false,false));
 
 // ===================== SMOOTH NAV =====================
 document.querySelectorAll('a[href^="#"]').forEach(a => {
