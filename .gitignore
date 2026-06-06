@@ -1,0 +1,10 @@
+# Credenciais privadas — nunca commitar
+.credentials
+.env
+.env.local
+.env*.local
+
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini
