@@ -6,4 +6,10 @@
     <priority>1.0</priority>
     <lastmod>2026-06-06</lastmod>
   </url>
+  <url>
+    <loc>https://renovamais.pt/privacy</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <lastmod>2026-06-06</lastmod>
+  </url>
 </urlset>
