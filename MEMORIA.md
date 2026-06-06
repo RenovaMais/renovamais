@@ -11,8 +11,8 @@
 | Sector | Construção, Renovação e Reabilitação |
 | Zona | Lisboa e Área Metropolitana |
 | Fundação | 2026 |
-| Telefone | +351 912 991 081 (pode mudar) |
-| WhatsApp | wa.me/351912991081 |
+| Telefone | +351 912 911 081 (pode mudar) |
+| WhatsApp | wa.me/351912911081 |
 | Email profissional | geral@renovamais.pt |
 | Email pessoal | alexfelgo@gmail.com |
 | Email negócio Gmail | geral.Renovamais@gmail.com |
