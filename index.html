@@ -2,7 +2,7 @@
 <html lang="pt-PT" data-theme="dark">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="google-site-verification" content="k3Qufku8hIimiXewrrFMZPFYgIh4U0W-E5-T71fnYRo">
 <title>RenovaMais | Construção e Reabilitação em Lisboa</title>
 <meta name="description" content="Especialistas em renovação, remodelação e reabilitação de imóveis no distrito de Lisboa. Mais de 10 anos de experiência. Orçamento gratuito e sem compromisso.">
@@ -113,7 +113,7 @@ h1,h2,h3,h4{font-family:'Exo 2',sans-serif;line-height:1.1}
 .mobile-menu a:hover{color:var(--accent)}
 
 /* ===================== HERO ===================== */
-#hero{position:relative;height:100vh;min-height:640px;display:flex;align-items:center;overflow:hidden}
+#hero{position:relative;height:100vh;height:100svh;min-height:640px;display:flex;align-items:center;overflow:hidden}
 .hero-bg{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80&auto=format&fit=crop');background-size:cover;background-position:center;transform:scale(1.05);transition:transform 8s ease}
 .hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(13,13,13,.9) 0%,rgba(13,13,13,.6) 60%,rgba(13,13,13,.4) 100%)}
 [data-theme="light"] .hero-bg::after{background:linear-gradient(135deg,rgba(13,13,13,.85) 0%,rgba(13,13,13,.55) 60%,rgba(13,13,13,.35) 100%)}
@@ -261,14 +261,14 @@ footer{background:var(--bg3);border-top:1px solid var(--border);padding:64px 0 3
 .footer-legal a:hover{color:var(--accent)}
 
 /* ===================== WHATSAPP ===================== */
-.wa-float{position:fixed;bottom:28px;right:28px;z-index:900;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:transform .3s,box-shadow .3s}
+.wa-float{position:fixed;bottom:28px;bottom:max(28px,calc(env(safe-area-inset-bottom) + 12px));right:28px;right:max(28px,calc(env(safe-area-inset-right) + 12px));z-index:900;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:transform .3s,box-shadow .3s}
 .wa-float:hover{transform:scale(1.1);box-shadow:0 8px 32px rgba(37,211,102,.5)}
 .wa-float svg{width:28px;height:28px;fill:#fff}
 
 /* ===================== COOKIE ===================== */
 #cookie-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:799;opacity:0;pointer-events:none;transition:opacity .3s}
 #cookie-overlay.show{opacity:1;pointer-events:auto}
-#cookie-banner{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(120%);z-index:800;background:var(--card);border:1px solid var(--border);border-radius:8px;padding:28px 32px;width:min(640px,calc(100vw - 32px));box-shadow:0 24px 64px rgba(0,0,0,.4);transition:transform .4s cubic-bezier(.34,1.56,.64,1)}
+#cookie-banner{position:fixed;bottom:24px;bottom:max(24px,calc(env(safe-area-inset-bottom) + 8px));left:50%;transform:translateX(-50%) translateY(120%);z-index:800;background:var(--card);border:1px solid var(--border);border-radius:8px;padding:28px 32px;width:min(640px,calc(100vw - 32px));box-shadow:0 24px 64px rgba(0,0,0,.4);transition:transform .4s cubic-bezier(.34,1.56,.64,1)}
 #cookie-banner.show{transform:translateX(-50%) translateY(0)}
 .cookie-logo{font-family:'Exo 2',sans-serif;font-size:1rem;font-weight:900;margin-bottom:12px}
 .cookie-logo span{color:var(--accent)}
@@ -314,8 +314,16 @@ footer{background:var(--bg3);border-top:1px solid var(--border);padding:64px 0 3
   .servicos-grid{grid-template-columns:1fr}
   .processo-steps{grid-template-columns:1fr}
   .form-row{grid-template-columns:1fr}
-  .hero-title{font-size:2.6rem}
+  .hero-title{font-size:2.4rem}
+  .hero-badge{font-size:.65rem;padding:5px 12px}
   .footer-grid{grid-template-columns:1fr}
+  /* iOS anti-zoom: inputs devem ter min 16px para não disparar zoom automático */
+  .form-group input,.form-group select,.form-group textarea{font-size:16px}
+  /* Card Gestão de Obras em mobile: 3/1 ficaria muito baixo */
+  .servico-card:last-child{aspect-ratio:16/9}
+  /* Cookie banner em ecrãs muito pequenos */
+  .cookie-btns{flex-direction:column}
+  .cookie-accept-all,.cookie-save,.cookie-reject{flex:unset;width:100%}
 }
 </style>
 </head>
