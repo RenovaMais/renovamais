@@ -184,6 +184,8 @@ h1,h2,h3,h4{font-family:'Exo 2',sans-serif;line-height:1.1}
 .ba-label h3{font-family:'Exo 2',sans-serif;font-size:1rem;font-weight:700}
 .ba-label span{font-family:'Poppins',sans-serif;font-size:.7rem;color:var(--text3);letter-spacing:.1em;text-transform:uppercase}
 .ba-slider{position:relative;aspect-ratio:16/10;overflow:hidden;cursor:col-resize;user-select:none}
+.ba-showcase{position:relative;aspect-ratio:16/10;overflow:hidden}
+.ba-showcase img{width:100%;height:100%;object-fit:cover;display:block}
 .ba-before,.ba-after{position:absolute;inset:0}
 .ba-before img,.ba-after img{width:100%;height:100%;object-fit:cover}
 .ba-before{clip-path:inset(0 50% 0 0);transition:clip-path .0s}
@@ -403,7 +405,10 @@ footer{background:var(--bg3);border-top:1px solid var(--border);padding:64px 0 3
   <div class="container">
     <div class="sobre-grid">
       <div class="sobre-img-wrap reveal">
-        <img class="sobre-img" src="https://images.unsplash.com/photo-1772442198620-3674b427e59e?w=800&q=80&auto=format&fit=crop" alt="Especialista RenovaMais em obra" loading="lazy">
+        <picture>
+          <source srcset="img/sobre.avif" type="image/avif">
+          <img class="sobre-img" src="img/sobre.jpg" alt="Pavimentos e interiores de excelência — RenovaMais" loading="lazy">
+        </picture>
         <div class="sobre-badge">
           <strong>10+</strong>
           <span data-i18n="sobre_badge">Anos de Excelência</span>
@@ -549,18 +554,15 @@ footer{background:var(--bg3);border-top:1px solid var(--border);padding:64px 0 3
       <!-- BA 1 -->
       <div class="ba-item reveal">
         <div class="ba-label">
-          <h3 data-i18n="ba1_title">Apartamento · Alfama, Lisboa</h3>
+          <h3 data-i18n="ba1_title">Cozinha · Lisboa</h3>
           <span data-i18n="ba1_type">Remodelação Completa</span>
         </div>
-        <div class="ba-slider" id="ba1">
-          <div class="ba-after"><img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&q=70&auto=format&fit=crop" alt="Depois" loading="lazy"></div>
-          <div class="ba-before"><img src="https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?w=800&q=70&auto=format&fit=crop" alt="Antes" loading="lazy"></div>
-          <div class="ba-divider"></div>
-          <div class="ba-handle"></div>
+        <div class="ba-showcase">
+          <img src="img/cozinha-ba1.jpg" alt="Remodelação de cozinha Lisboa — Antes e Depois" loading="lazy">
         </div>
         <div class="ba-tags">
-          <span class="ba-tag" data-i18n="tag_interiores">Interiores</span>
           <span class="ba-tag" data-i18n="tag_cozinha">Cozinha</span>
+          <span class="ba-tag" data-i18n="tag_interiores">Interiores</span>
           <span class="ba-tag" data-i18n="tag_pavimentos">Pavimentos</span>
         </div>
       </div>
@@ -568,18 +570,16 @@ footer{background:var(--bg3);border-top:1px solid var(--border);padding:64px 0 3
       <!-- BA 2 -->
       <div class="ba-item reveal">
         <div class="ba-label">
-          <h3 data-i18n="ba2_title">Moradia · Sintra</h3>
-          <span data-i18n="ba2_type">Reabilitação de Fachada</span>
+          <h3 data-i18n="ba2_title">Cozinha · Lisboa</h3>
+          <span data-i18n="ba2_type">Remodelação Completa</span>
         </div>
-        <div class="ba-slider" id="ba2">
-          <div class="ba-after"><img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&q=70&auto=format&fit=crop" alt="Depois" loading="lazy"></div>
-          <div class="ba-before"><img src="https://images.unsplash.com/photo-1558036117-15d82a90b9b1?w=800&q=70&auto=format&fit=crop" alt="Antes" loading="lazy"></div>
-          <div class="ba-divider"></div>
-          <div class="ba-handle"></div>
+        <div class="ba-showcase">
+          <img src="img/cozinha-ba2.jpg" alt="Remodelação de cozinha Lisboa — Antes e Depois" loading="lazy">
         </div>
         <div class="ba-tags">
-          <span class="ba-tag" data-i18n="tag_fachada">Fachada</span>
-          <span class="ba-tag" data-i18n="tag_isolamento">Isolamento</span>
+          <span class="ba-tag" data-i18n="tag_cozinha">Cozinha</span>
+          <span class="ba-tag" data-i18n="tag_interiores">Interiores</span>
+          <span class="ba-tag" data-i18n="tag_azulejos">Azulejos</span>
         </div>
       </div>
 
