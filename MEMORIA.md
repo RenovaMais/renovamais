@@ -1,5 +1,5 @@
 # RenovaMais — Memória Completa do Projecto
-> Última actualização: 6 de Junho de 2026
+> Última actualização: 7 de Junho de 2026
 
 ---
 
@@ -273,6 +273,14 @@ Conforme o **Artigo 1225.º do Código Civil Português**:
 - [x] obrigado.html redesenhada (RenovaMais + processo 3 passos)
 - [x] 404.html redesenhada (RenovaMais + links navegação)
 - [x] Formulário Formspree (xaqzqozo) com redirect obrigado.html
+- [x] Fotos Unsplash realistas e gratuitas (confirmadas livres de licença)
+  - Sobre: foto-1772442198620 (especialista em obra)
+  - Serviço 02 Cozinhas: foto-1601760561441 (cozinha branca realista)
+  - Serviço 03 Fachadas: foto-1774579892822 (fachada mediterrânica renovada)
+  - Serviço 06 Construção: foto-1761479135364 (casas em construção)
+  - Portfolio BA3 antes/depois: antes=foto-1630840450974 (WC antigo azulejos azuis)
+  - Portfolio BA4 antes/depois: antes=foto-1566699270403 (escritório antigo desordenado)
+  - (Eliminados truques CSS filter sepia/grayscale — agora são fotos reais)
 
 ### Google Business
 - [x] Google Business Profile criado ("Renova Mais", Construtor Civil)
@@ -282,7 +290,7 @@ Conforme o **Artigo 1225.º do Código Civil Português**:
 ## ⏳ PENDENTE
 
 ### Precisa do utilizador
-- [ ] Fotos reais das obras (portfolio antes/depois + cards serviços 03 e 06)
+- [ ] Fotos reais das obras (substituir placeholders Unsplash no portfolio e serviços)
 - [ ] Instagram Business (@renovamais.pt)
 - [ ] Facebook Business (/renovamais.pt)
 
@@ -325,7 +333,7 @@ C:\Users\Aleke\Documents\Claud-Code\renovamais\
 https://github.com/RenovaMais/renovamais
 Branch: main
 Deploy: automático → Vercel
-Último commit: fix estatística obras 200+ → 50+
+Último commit: fix: replace all CSS-filter photo hacks with real before/after images
 ```
 
 ---
