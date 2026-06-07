@@ -162,6 +162,7 @@ h1,h2,h3,h4{font-family:'Exo 2',sans-serif;line-height:1.1}
 .servico-arr{position:absolute;top:20px;right:20px;width:36px;height:36px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;transform:scale(0);transition:transform .3s ease}
 .servico-card:hover .servico-arr{transform:scale(1)}
 .servico-arr::after{content:'→';color:#0D0D0D;font-size:1rem;font-weight:700}
+.servico-card:last-child{grid-column:1/-1;aspect-ratio:3/1}
 
 /* ===================== PROCESSO ===================== */
 #processo{padding:100px 0;background:var(--bg2)}
@@ -503,6 +504,15 @@ footer{background:var(--bg3);border-top:1px solid var(--border);padding:64px 0 3
       </div>
       <div class="servico-arr"></div>
     </div>
+    <div class="servico-card">
+      <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1400&q=70&auto=format&fit=crop" alt="Gestão de Obras" loading="lazy">
+      <div class="servico-overlay">
+        <div class="servico-num">07</div>
+        <div class="servico-name" data-i18n="serv7_name">Gestão de Obras</div>
+        <div class="servico-desc" data-i18n="serv7_desc">Coordenamos todas as fases da sua obra em seu nome — projecto, fornecedores, prazos e qualidade. Ideal para clientes não residentes ou com agenda preenchida.</div>
+      </div>
+      <div class="servico-arr"></div>
+    </div>
   </div>
 </section>
 
@@ -759,6 +769,7 @@ footer{background:var(--bg3);border-top:1px solid var(--border);padding:64px 0 3
                 <option value="Pinturas e Acabamentos" data-i18n="serv4_name">Pinturas e Acabamentos</option>
                 <option value="Pavimentos e Azulejos" data-i18n="serv5_name">Pavimentos e Azulejos</option>
                 <option value="Construção e Ampliações" data-i18n="serv6_name">Construção e Ampliações</option>
+                <option value="Gestão de Obras" data-i18n="serv7_name">Gestão de Obras</option>
                 <option value="Outro" data-i18n="form_outro">Outro</option>
               </select>
             </div>
@@ -803,6 +814,8 @@ footer{background:var(--bg3);border-top:1px solid var(--border);padding:64px 0 3
           <a href="#servicos" data-i18n="serv3_name">Reabilitação de Fachadas</a>
           <a href="#servicos" data-i18n="serv4_name">Pinturas e Acabamentos</a>
           <a href="#servicos" data-i18n="serv5_name">Pavimentos e Azulejos</a>
+          <a href="#servicos" data-i18n="serv6_name">Construção e Ampliações</a>
+          <a href="#servicos" data-i18n="serv7_name">Gestão de Obras</a>
         </div>
       </div>
       <div>
@@ -898,6 +911,7 @@ const T = {
     serv4_name:'Pinturas e Acabamentos', serv4_desc:'Pintura interior e exterior, estuques, gesso cartonado e revestimentos decorativos de excelência.',
     serv5_name:'Pavimentos e Azulejos', serv5_desc:'Aplicação de cerâmica, soalho, microcimento, vinílicos e outros pavimentos decorativos.',
     serv6_name:'Construção e Ampliações', serv6_desc:'Construção de raiz, ampliações e obras de estrutura com projecto e licenciamento incluídos.',
+    serv7_name:'Gestão de Obras', serv7_desc:'Coordenamos todas as fases da sua obra em seu nome — projecto, fornecedores, prazos e qualidade. Ideal para clientes não residentes ou com agenda preenchida.',
     proc_label:'Como Trabalhamos', proc_title:'O nosso processo',
     proc1_title:'Contacto', proc1_desc:'Fale connosco pelo formulário, telefone ou WhatsApp. A nossa equipa responde com a maior brevidade possível.',
     proc2_title:'Visita e Orçamento', proc2_desc:'Deslocamo-nos ao local, avaliamos o espaço e entregamos orçamento detalhado e personalizado. Gratuito e sem qualquer compromisso.',
@@ -953,6 +967,7 @@ const T = {
     serv4_name:'Painting & Finishes', serv4_desc:'Interior and exterior painting, stucco, plasterboard and decorative coatings.',
     serv5_name:'Flooring & Tiling', serv5_desc:'Installation of ceramic, hardwood, microcement, vinyl and other decorative flooring.',
     serv6_name:'Construction & Extensions', serv6_desc:'New builds, extensions and structural works, in coordination with specialist technical design.',
+    serv7_name:'Project Management', serv7_desc:'We manage every phase of your project on your behalf — design, contractors, deadlines and quality control. Ideal for non-residents or busy clients.',
     proc_label:'How We Work', proc_title:'Our process',
     proc1_title:'Contact', proc1_desc:'Reach us via form, phone or WhatsApp. Our team will respond as quickly as possible.',
     proc2_title:'Site Visit & Quote', proc2_desc:'We visit the site, assess the space and deliver a detailed, personalised quote. Free and with no commitment.',
@@ -1008,6 +1023,7 @@ const T = {
     serv4_name:'Pinturas y Acabados', serv4_desc:'Pintura interior y exterior, estuco, pladur y revestimientos decorativos de excelencia.',
     serv5_name:'Pavimentos y Azulejos', serv5_desc:'Instalación de cerámica, parquet, microcemento, vinílicos y otros pavimentos decorativos.',
     serv6_name:'Construcción y Ampliaciones', serv6_desc:'Obra nueva, ampliaciones y obras estructurales, en coordinación con proyecto técnico especializado.',
+    serv7_name:'Gestión de Obras', serv7_desc:'Coordinamos todas las fases de su obra en su nombre — proyecto, proveedores, plazos y calidad. Ideal para clientes no residentes o con agenda ocupada.',
     proc_label:'Cómo Trabajamos', proc_title:'Nuestro proceso',
     proc1_title:'Contacto', proc1_desc:'Contáctenos por formulario, teléfono o WhatsApp. Nuestro equipo responde con la mayor brevedad posible.',
     proc2_title:'Visita y Presupuesto', proc2_desc:'Visitamos el lugar, evaluamos el espacio y elaboramos un presupuesto detallado y personalizado. Gratuito y sin compromiso.',
