@@ -8,7 +8,8 @@
 | Campo | Valor |
 |-------|-------|
 | Nome comercial | **RenovaMais** |
-| Nome legal | RenovaMais Alves Melo, Lda. |
+| Nome legal | **Renova Mais, LDA** |
+| NIF | **519467892** |
 | Sector | Construção, Renovação e Reabilitação |
 | Zona | Lisboa e Área Metropolitana |
 | Fundação | 2026 |
