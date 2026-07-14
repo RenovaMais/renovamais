@@ -137,27 +137,39 @@ h1{font-size:clamp(2.45rem,4.55vw,4.35rem);font-weight:900;letter-spacing:0}
 h2{font-size:clamp(2rem,4.2vw,3.55rem);font-weight:900;letter-spacing:0}
 h3{font-size:1.35rem;font-weight:800}
 p{line-height:1.7}
-.nav{position:fixed;top:0;left:0;right:0;z-index:50;background:var(--nav-bg);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;background:transparent;backdrop-filter:none;border-bottom:1px solid transparent;transition:background .3s,backdrop-filter .3s,border-bottom .3s}
+.nav.scrolled{background:var(--nav-bg);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
 .nav-inner{height:72px;display:flex;align-items:center;justify-content:space-between;gap:18px}
 .brand{font-family:'Exo 2',sans-serif;font-size:1.45rem;font-weight:900}
 .brand span{color:var(--accent)}
 .nav-links{display:flex;align-items:center;gap:22px;font-size:.76rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
 .nav-links a:hover{color:var(--accent)}
 .nav-cta{display:flex;align-items:center;gap:10px}
-.nav-phone{font-size:.82rem;font-weight:800;color:var(--text);white-space:nowrap}
+.nav-phone{display:none;font-size:.82rem;font-weight:800;color:var(--text);white-space:nowrap}
 .nav-tools{display:flex;align-items:center;gap:8px}
 .lang-btn,.theme-toggle{height:34px;border:1px solid var(--line);background:var(--surface);color:var(--muted);border-radius:4px;padding:0 9px;font-size:.72rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
 .lang-btn.active,.theme-toggle:hover,.lang-btn:hover{border-color:var(--accent);color:var(--accent-strong)}
 .theme-toggle{width:38px;padding:0;font-size:1rem}
-.hero{position:relative;min-height:86svh;padding:118px 0 58px;display:flex;align-items:center;overflow:hidden}
-.hero::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,7,7,.92),rgba(7,7,7,.74) 43%,rgba(7,7,7,.3)),url('img/wc-ba3.jpg') center right/cover no-repeat;transform:scale(1.02)}
+.nav:not(.scrolled) .brand,.nav:not(.scrolled) .nav-phone{color:#fff}
+.nav:not(.scrolled) .nav-links{color:rgba(255,255,255,.7)}
+.nav:not(.scrolled) .nav-links a:hover{color:#A8FF00}
+.nav:not(.scrolled) .lang-btn,.nav:not(.scrolled) .theme-toggle{background:rgba(13,13,13,.28);border-color:rgba(255,255,255,.18);color:rgba(255,255,255,.78)}
+.nav:not(.scrolled) .lang-btn.active{background:rgba(168,255,0,.14);border-color:rgba(168,255,0,.38);color:#A8FF00}
+.hero{position:relative;height:100svh;min-height:680px;padding:118px 0 58px;display:flex;align-items:center;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(7,7,7,.9) 0%,rgba(7,7,7,.64) 58%,rgba(7,7,7,.28) 100%),url('img/wc-ba3.jpg') center right/cover no-repeat;transform:scale(1.02)}
 .hero::after{content:'';position:absolute;left:0;right:0;bottom:0;height:190px;background:linear-gradient(to bottom,transparent,var(--bg))}
 .hero-inner{position:relative;z-index:1;max-width:760px}
-.hero h1{color:var(--hero-text)}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;border:1px solid rgba(168,255,0,.34);border-radius:100px;font-family:'Poppins',sans-serif;font-size:.75rem;font-weight:500;color:#A8FF00;margin-bottom:28px;background:rgba(13,13,13,.16);animation:fadeUp .8s ease both}
+.hero-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:#A8FF00;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.hero h1{font-size:clamp(2.65rem,5.2vw,4.9rem);line-height:1;color:var(--hero-text);animation:fadeUp .8s .15s ease both}
 .hero h1 span{color:#A8FF00}
-.hero-copy{font-size:1.06rem;color:var(--hero-muted);max-width:620px;margin:22px 0 28px}
-.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:36px}
-.hero-proof{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;max-width:720px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.12)}
+.hero-copy{font-size:1.08rem;color:var(--hero-muted);max-width:620px;margin:24px 0 34px;animation:fadeUp .8s .3s ease both}
+.hero-actions{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:36px;animation:fadeUp .8s .45s ease both}
+.hero .btn-ghost{border:2px solid #A8FF00;color:#A8FF00;background:rgba(13,13,13,.12)}
+.hero .btn-ghost:hover{background:#A8FF00;color:#0d0d0d}
+.hero-proof{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;max-width:720px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.12);animation:fadeUp .8s .6s ease both}
 .proof-cell{background:rgba(13,13,13,.78);padding:20px;color:#fff}
 .proof-cell strong{display:block;font-family:'Exo 2',sans-serif;font-size:1.45rem;color:#fff;margin-bottom:4px}
 .proof-cell span{font-family:'Poppins',sans-serif;font-size:.76rem;color:rgba(255,255,255,.7)}
@@ -258,8 +270,10 @@ textarea{min-height:118px;resize:vertical}
   .nav-cta .btn{display:none}
   h1{font-size:clamp(2.08rem,10.2vw,3.05rem);line-height:1.04}
   h2{font-size:clamp(1.8rem,8vw,2.6rem)}
-  .hero{padding:98px 0 52px}
+  .hero{height:auto;min-height:100svh;padding:104px 0 58px}
   .hero::before{background:linear-gradient(180deg,rgba(7,7,7,.9),rgba(7,7,7,.72)),url('img/wc-ba3.jpg') center/cover no-repeat}
+  .hero-badge{font-size:.64rem;padding:5px 12px;margin-bottom:20px}
+  .hero h1{font-size:clamp(2.15rem,10vw,3.2rem);line-height:1.02}
   .hero-copy{font-size:1rem;margin:18px 0 24px}
   .hero-actions,.submit-row{flex-direction:column;align-items:stretch}
   .hero-actions .btn,.submit-row .btn{width:100%}
@@ -304,6 +318,7 @@ textarea{min-height:118px;resize:vertical}
 <main>
   <section class="hero">
     <div class="container hero-inner">
+      <div class="hero-badge"><span data-i18n="hero_badge">Cascais · Oeiras · Sintra · Amadora · Visita técnica</span></div>
       <h1 data-i18n="hero_title">Remodelação de <span>casas de banho</span> em Cascais, Oeiras, Sintra e Amadora</h1>
       <p class="hero-copy" data-i18n="hero_copy">Transforme uma casa de banho antiga, fria ou pouco funcional num espaço moderno, seguro e fácil de manter. A Renova Mais trata da obra completa: planeamento, demolição, canalização, electricidade, revestimentos, loiças e acabamentos.</p>
       <div class="hero-actions">
@@ -713,6 +728,11 @@ const translations = {
     ba_disclaimer:'Fotografías reales facilitadas por Renova Mais, ajustadas solo en iluminación, nitidez y color sin alterar la obra.'
   }
 };
+const heroBadgeLabels = {
+  pt:'Cascais · Oeiras · Sintra · Amadora · Visita técnica',
+  en:'Cascais · Oeiras · Sintra · Amadora · Technical visit',
+  es:'Cascais · Oeiras · Sintra · Amadora · Visita técnica'
+};
 function applyLang(lang){
   const dict = translations[lang] || translations.pt;
   document.documentElement.lang = lang === 'pt' ? 'pt-PT' : lang;
@@ -720,6 +740,9 @@ function applyLang(lang){
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
     if (dict[key]) el.innerHTML = dict[key];
+  });
+  document.querySelectorAll('[data-i18n="hero_badge"]').forEach(el => {
+    el.innerHTML = heroBadgeLabels[lang] || heroBadgeLabels.pt;
   });
   document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.toggle('active', btn.dataset.lang === lang));
 }
@@ -736,6 +759,13 @@ document.getElementById('themeToggle')?.addEventListener('click', () => {
 });
 applyTheme(localStorage.getItem('rm_landing_theme') || 'light');
 applyLang(localStorage.getItem('rm_landing_lang') || 'pt');
+
+const nav = document.querySelector('.nav');
+function updateNavState(){
+  if (nav) nav.classList.toggle('scrolled', window.scrollY > 32);
+}
+window.addEventListener('scroll', updateNavState, {passive:true});
+updateNavState();
 
 const leadParams = ['utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid','gbraid','wbraid'];
 const query = new URLSearchParams(window.location.search);
