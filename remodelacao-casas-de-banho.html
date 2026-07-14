@@ -271,9 +271,9 @@ textarea{min-height:118px;resize:vertical}
   .section{padding:72px 0}
   .media-frame img{height:340px}
   input,select,textarea{font-size:16px}
-  .wa-float{width:54px;height:54px;right:16px;bottom:86px}
-  .mobile-sticky-actions{position:fixed;left:0;right:0;bottom:0;z-index:59;display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:var(--nav-bg);backdrop-filter:blur(16px);border-top:1px solid var(--line)}
-  .mobile-sticky-actions .btn{min-height:46px;padding:12px 10px;font-size:.72rem}
+  .wa-float{display:none}
+  .mobile-sticky-actions{position:fixed;left:0;right:0;bottom:0;z-index:59;display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:var(--nav-bg);backdrop-filter:blur(16px);border-top:1px solid var(--line)}
+  .mobile-sticky-actions .btn{min-height:46px;padding:12px 8px;font-size:.66rem}
 }
 </style>
 </head>
@@ -607,6 +607,7 @@ textarea{min-height:118px;resize:vertical}
 
 <div class="mobile-sticky-actions" aria-label="Ações rápidas">
   <a class="btn btn-ghost" href="tel:+351912911081">Ligar</a>
+  <a class="btn btn-ghost" href="https://wa.me/351912911081?text=Ola%2C%20quero%20um%20orcamento%20para%20remodelar%20uma%20casa%20de%20banho." target="_blank" rel="noopener">WhatsApp</a>
   <a class="btn btn-primary" href="#orcamento">Orçamento</a>
 </div>
 
