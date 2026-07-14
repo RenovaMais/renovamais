@@ -121,7 +121,7 @@ button{border:0;cursor:pointer}
   --whatsapp:#25D366;
 }
 .container{width:min(1180px,calc(100% - 40px));margin:0 auto}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:14px 26px;border-radius:4px;font-size:.84rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;transition:transform .2s,background .2s,border .2s,box-shadow .2s}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:14px 26px;border-radius:4px;font-size:.84rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap;transition:transform .2s,background .2s,border .2s,box-shadow .2s}
 .btn-primary{background:var(--accent);color:var(--accent-text)}
 .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(168,255,0,.25)}
 .btn-ghost{border:1px solid var(--line);color:var(--text);background:rgba(255,255,255,.05)}
@@ -133,29 +133,29 @@ button{border:0;cursor:pointer}
 .section-head{max-width:760px;margin-bottom:44px}
 .section-kicker{font-family:'Poppins',sans-serif;font-size:.72rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
 h1,h2,h3{font-family:'Exo 2',sans-serif;line-height:1.03}
-h1{font-size:clamp(2.85rem,7vw,6.35rem);font-weight:900;letter-spacing:0}
+h1{font-size:clamp(2.65rem,5vw,4.95rem);font-weight:900;letter-spacing:0}
 h2{font-size:clamp(2rem,4.2vw,3.55rem);font-weight:900;letter-spacing:0}
 h3{font-size:1.35rem;font-weight:800}
 p{line-height:1.7}
 .nav{position:fixed;top:0;left:0;right:0;z-index:50;background:var(--nav-bg);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
-.nav-inner{height:72px;display:flex;align-items:center;justify-content:space-between;gap:22px}
+.nav-inner{height:72px;display:flex;align-items:center;justify-content:space-between;gap:18px}
 .brand{font-family:'Exo 2',sans-serif;font-size:1.45rem;font-weight:900}
 .brand span{color:var(--accent)}
-.nav-links{display:flex;align-items:center;gap:28px;font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.nav-links{display:flex;align-items:center;gap:22px;font-size:.76rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
 .nav-links a:hover{color:var(--accent)}
 .nav-cta{display:flex;align-items:center;gap:10px}
-.nav-phone{font-size:.85rem;font-weight:800;color:var(--text)}
+.nav-phone{font-size:.82rem;font-weight:800;color:var(--text);white-space:nowrap}
 .nav-tools{display:flex;align-items:center;gap:8px}
 .lang-btn,.theme-toggle{height:34px;border:1px solid var(--line);background:var(--surface);color:var(--muted);border-radius:4px;padding:0 9px;font-size:.72rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
 .lang-btn.active,.theme-toggle:hover,.lang-btn:hover{border-color:var(--accent);color:var(--accent-strong)}
 .theme-toggle{width:38px;padding:0;font-size:1rem}
-.hero{position:relative;min-height:92svh;padding:140px 0 70px;display:flex;align-items:center;overflow:hidden}
+.hero{position:relative;min-height:86svh;padding:118px 0 58px;display:flex;align-items:center;overflow:hidden}
 .hero::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,7,7,.92),rgba(7,7,7,.74) 43%,rgba(7,7,7,.3)),url('img/wc-ba3.jpg') center right/cover no-repeat;transform:scale(1.02)}
 .hero::after{content:'';position:absolute;left:0;right:0;bottom:0;height:190px;background:linear-gradient(to bottom,transparent,var(--bg))}
-.hero-inner{position:relative;z-index:1;max-width:790px}
+.hero-inner{position:relative;z-index:1;max-width:720px}
 .hero h1{color:var(--hero-text)}
 .hero h1 span{color:#A8FF00}
-.hero-copy{font-size:1.14rem;color:var(--hero-muted);max-width:650px;margin:28px 0 34px}
+.hero-copy{font-size:1.06rem;color:var(--hero-muted);max-width:620px;margin:22px 0 28px}
 .hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:36px}
 .hero-proof{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;max-width:720px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.12)}
 .proof-cell{background:rgba(13,13,13,.78);padding:20px;color:#fff}
@@ -227,6 +227,7 @@ textarea{min-height:118px;resize:vertical}
 .footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 .wa-float{position:fixed;right:22px;bottom:22px;z-index:60;width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--whatsapp);box-shadow:0 14px 34px rgba(37,211,102,.32)}
 .wa-float svg{width:29px;height:29px;fill:#fff}
+.mobile-sticky-actions{display:none}
 #cookie-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:79;opacity:0;pointer-events:none;transition:opacity .3s}
 #cookie-overlay.show{opacity:1;pointer-events:auto}
 #cookie-banner{position:fixed;left:50%;bottom:20px;transform:translateX(-50%) translateY(120%);z-index:80;width:min(620px,calc(100% - 32px));background:var(--surface);border:1px solid var(--line);box-shadow:0 24px 70px rgba(0,0,0,.24);padding:24px;transition:transform .35s}
@@ -254,11 +255,15 @@ textarea{min-height:118px;resize:vertical}
   .nav-tools{gap:5px}
   .lang-btn,.theme-toggle{height:30px;padding:0 6px;font-size:.62rem}
   .theme-toggle{width:32px}
-  .nav-cta .btn{padding:10px 12px;font-size:.66rem;min-height:40px}
-  .hero{padding:112px 0 64px}
+  .nav-cta .btn{display:none}
+  h1{font-size:clamp(2.08rem,10.2vw,3.05rem);line-height:1.04}
+  h2{font-size:clamp(1.8rem,8vw,2.6rem)}
+  .hero{padding:98px 0 52px}
   .hero::before{background:linear-gradient(180deg,rgba(7,7,7,.9),rgba(7,7,7,.72)),url('img/wc-ba3.jpg') center/cover no-repeat}
+  .hero-copy{font-size:1rem;margin:18px 0 24px}
   .hero-actions,.submit-row{flex-direction:column;align-items:stretch}
   .hero-actions .btn,.submit-row .btn{width:100%}
+  .hero-proof{grid-template-columns:1fr}
   .proof-cell{padding:16px}
   .lead-copy,.lead-form{padding:24px}
   .form-grid,.included,.process{grid-template-columns:1fr}
@@ -266,7 +271,9 @@ textarea{min-height:118px;resize:vertical}
   .section{padding:72px 0}
   .media-frame img{height:340px}
   input,select,textarea{font-size:16px}
-  .wa-float{width:54px;height:54px;right:16px;bottom:16px}
+  .wa-float{width:54px;height:54px;right:16px;bottom:86px}
+  .mobile-sticky-actions{position:fixed;left:0;right:0;bottom:0;z-index:59;display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:var(--nav-bg);backdrop-filter:blur(16px);border-top:1px solid var(--line)}
+  .mobile-sticky-actions .btn{min-height:46px;padding:12px 10px;font-size:.72rem}
 }
 </style>
 </head>
@@ -597,6 +604,11 @@ textarea{min-height:118px;resize:vertical}
     <span><a href="tel:+351912911081">+351 912 911 081</a> · <a href="mailto:geral@renovamais.pt">geral@renovamais.pt</a> · <a href="/privacy">Política de Privacidade</a></span>
   </div>
 </footer>
+
+<div class="mobile-sticky-actions" aria-label="Ações rápidas">
+  <a class="btn btn-ghost" href="tel:+351912911081">Ligar</a>
+  <a class="btn btn-primary" href="#orcamento">Orçamento</a>
+</div>
 
 <a class="wa-float" href="https://wa.me/351912911081?text=Ola%2C%20quero%20um%20orcamento%20para%20remodelar%20uma%20casa%20de%20banho." target="_blank" rel="noopener" aria-label="Falar com a Renova Mais no WhatsApp">
   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
