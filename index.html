@@ -29,7 +29,19 @@
 
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-EXPZ8HG8RB"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-EXPZ8HG8RB');</script>
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent','default',{
+  analytics_storage:'denied',
+  ad_storage:'denied',
+  ad_user_data:'denied',
+  ad_personalization:'denied',
+  wait_for_update:500
+});
+gtag('js',new Date());
+gtag('config','G-EXPZ8HG8RB',{anonymize_ip:true});
+</script>
 
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -752,8 +764,18 @@ footer{background:var(--bg3);border-top:1px solid var(--border);padding:64px 0 3
       <div class="reveal">
         <div class="form-wrap">
           <form action="https://formspree.io/f/xaqzqozo" method="POST" id="contactForm">
-            <input type="hidden" name="_next" value="https://renovamais.pt/obrigado.html">
+            <input type="hidden" name="_next" value="https://renovamais.pt/obrigado">
             <input type="hidden" name="_subject" value="Novo pedido de orçamento — Renova Mais">
+            <input type="hidden" name="pagina_origem" value="homepage">
+            <input type="hidden" name="landing_url" value="">
+            <input type="hidden" name="utm_source" value="">
+            <input type="hidden" name="utm_medium" value="">
+            <input type="hidden" name="utm_campaign" value="">
+            <input type="hidden" name="utm_term" value="">
+            <input type="hidden" name="utm_content" value="">
+            <input type="hidden" name="gclid" value="">
+            <input type="hidden" name="gbraid" value="">
+            <input type="hidden" name="wbraid" value="">
             <div class="form-row">
               <div class="form-group">
                 <label for="nome" data-i18n="form_nome">Nome</label>
@@ -792,7 +814,7 @@ footer{background:var(--bg3);border-top:1px solid var(--border);padding:64px 0 3
             </div>
             <div class="form-group" style="flex-direction:row;align-items:flex-start;gap:10px;margin-bottom:24px">
               <input type="checkbox" id="rgpd" name="rgpd" value="aceito" required style="margin-top:3px;accent-color:var(--accent);width:16px;height:16px;flex-shrink:0">
-              <label for="rgpd" style="font-size:.78rem;text-transform:none;letter-spacing:0;color:var(--text2);cursor:pointer" data-i18n="form_rgpd">Li e aceito a <a href="/privacy.html" style="color:var(--accent);text-decoration:underline">Política de Privacidade</a>. Os meus dados serão utilizados exclusivamente para resposta ao pedido de orçamento. *</label>
+              <label for="rgpd" style="font-size:.78rem;text-transform:none;letter-spacing:0;color:var(--text2);cursor:pointer" data-i18n="form_rgpd">Li e aceito a <a href="/privacy" style="color:var(--accent);text-decoration:underline">Política de Privacidade</a>. Os meus dados serão utilizados exclusivamente para resposta ao pedido de orçamento. *</label>
             </div>
             <button type="submit" class="btn btn-primary form-submit" data-i18n="form_submit">Pedir Orçamento Gratuito →</button>
           </form>
@@ -848,8 +870,8 @@ footer{background:var(--bg3);border-top:1px solid var(--border);padding:64px 0 3
     <div class="footer-bottom">
       <p class="footer-copy">© 2026 Renova Mais Alves Melo, Lda. <span data-i18n="footer_rights">Todos os direitos reservados.</span></p>
       <div class="footer-legal">
-        <a href="/privacy.html" data-i18n="footer_privacy">Política de Privacidade</a>
-        <a href="/privacy.html" data-i18n="footer_rgpd">RGPD</a>
+        <a href="/privacy" data-i18n="footer_privacy">Política de Privacidade</a>
+        <a href="/privacy" data-i18n="footer_rgpd">RGPD</a>
       </div>
     </div>
   </div>
@@ -865,7 +887,7 @@ footer{background:var(--bg3);border-top:1px solid var(--border);padding:64px 0 3
 <div id="cookie-banner" role="dialog" aria-modal="true" aria-label="Preferências de cookies">
   <div class="cookie-logo">Renova<span>Mais</span></div>
   <h3 data-i18n="cookie_title">Utilizamos cookies</h3>
-  <p data-i18n="cookie_text">Usamos cookies para melhorar a sua experiência, analisar o tráfego e personalizar conteúdo. Pode gerir as suas preferências abaixo. Consulte a nossa <a href="/privacy.html">Política de Privacidade</a>.</p>
+  <p data-i18n="cookie_text">Usamos cookies para melhorar a sua experiência, analisar o tráfego e personalizar conteúdo. Pode gerir as suas preferências abaixo. Consulte a nossa <a href="/privacy">Política de Privacidade</a>.</p>
   <div class="cookie-cats">
     <div class="cookie-cat">
       <div class="cookie-cat-info">
@@ -947,13 +969,13 @@ const T = {
     footer_about:'Especialistas em renovação, remodelação e reabilitação de imóveis em Lisboa e área metropolitana. Mais de 10 anos de excelência.',
     footer_servicos:'Serviços', footer_empresa:'Empresa', footer_contacto:'Contacto', footer_rights:'Todos os direitos reservados.', footer_privacy:'Política de Privacidade', footer_rgpd:'RGPD',
     cookie_title:'Utilizamos cookies',
-    cookie_text:'Usamos cookies para melhorar a sua experiência, analisar o tráfego e personalizar conteúdo. Pode gerir as suas preferências abaixo. Consulte a nossa <a href="/privacy.html">Política de Privacidade</a>.',
+    cookie_text:'Usamos cookies para melhorar a sua experiência, analisar o tráfego e personalizar conteúdo. Pode gerir as suas preferências abaixo. Consulte a nossa <a href="/privacy">Política de Privacidade</a>.',
     cookie_cat1:'🔒 Necessários', cookie_cat1_desc:'Essenciais para o funcionamento do site. Não podem ser desactivados.',
     cookie_cat2:'📊 Analíticos', cookie_cat2_desc:'Ajudam-nos a perceber como os visitantes interagem com o site (Google Analytics).',
     cookie_cat3:'📣 Marketing', cookie_cat3_desc:'Permitem mostrar anúncios relevantes e medir o desempenho de campanhas.',
     cookie_accept:'Aceitar Todos', cookie_save:'Guardar Preferências', cookie_decline:'Recusar',
     form_newsletter:'Aceito receber informações e novidades da Renova Mais por email. Pode cancelar a qualquer momento.',
-    form_rgpd:'Li e aceito a <a href="/privacy.html" style="color:var(--accent);text-decoration:underline">Política de Privacidade</a>. Os meus dados serão utilizados exclusivamente para resposta ao pedido de orçamento. *'
+    form_rgpd:'Li e aceito a <a href="/privacy" style="color:var(--accent);text-decoration:underline">Política de Privacidade</a>. Os meus dados serão utilizados exclusivamente para resposta ao pedido de orçamento. *'
   },
   en: {
     nav_sobre:'About', nav_servicos:'Services', nav_portfolio:'Portfolio', nav_faq:'FAQ', nav_contacto:'Contact', nav_cta:'Free Quote',
@@ -1003,13 +1025,13 @@ const T = {
     footer_about:'Specialists in renovation, refurbishment and rehabilitation of properties in Lisbon and the metropolitan area. Over 10 years of excellence.',
     footer_servicos:'Services', footer_empresa:'Company', footer_contacto:'Contact', footer_rights:'All rights reserved.', footer_privacy:'Privacy Policy', footer_rgpd:'GDPR',
     cookie_title:'We use cookies',
-    cookie_text:'We use cookies to improve your experience, analyse traffic and personalise content. Manage your preferences below. See our <a href="/privacy.html">Privacy Policy</a>.',
+    cookie_text:'We use cookies to improve your experience, analyse traffic and personalise content. Manage your preferences below. See our <a href="/privacy">Privacy Policy</a>.',
     cookie_cat1:'🔒 Necessary', cookie_cat1_desc:'Essential for the site to work. Cannot be disabled.',
     cookie_cat2:'📊 Analytics', cookie_cat2_desc:'Help us understand how visitors interact with the site (Google Analytics).',
     cookie_cat3:'📣 Marketing', cookie_cat3_desc:'Allow us to show relevant ads and measure campaign performance.',
     cookie_accept:'Accept All', cookie_save:'Save Preferences', cookie_decline:'Reject',
     form_newsletter:'I agree to receive news and updates from Renova Mais by email. You can unsubscribe at any time.',
-    form_rgpd:'I have read and accept the <a href="/privacy.html" style="color:var(--accent);text-decoration:underline">Privacy Policy</a>. My data will be used solely to respond to this quote request. *'
+    form_rgpd:'I have read and accept the <a href="/privacy" style="color:var(--accent);text-decoration:underline">Privacy Policy</a>. My data will be used solely to respond to this quote request. *'
   },
   es: {
     nav_sobre:'Sobre', nav_servicos:'Servicios', nav_portfolio:'Portfolio', nav_faq:'FAQ', nav_contacto:'Contacto', nav_cta:'Presupuesto Gratis',
@@ -1059,13 +1081,13 @@ const T = {
     footer_about:'Especialistas en renovación, remodelación y rehabilitación de inmuebles en Lisboa y área metropolitana. Más de 10 años de excelencia.',
     footer_servicos:'Servicios', footer_empresa:'Empresa', footer_contacto:'Contacto', footer_rights:'Todos los derechos reservados.', footer_privacy:'Política de Privacidad', footer_rgpd:'RGPD',
     cookie_title:'Usamos cookies',
-    cookie_text:'Usamos cookies para mejorar su experiencia, analizar el tráfico y personalizar el contenido. Gestione sus preferencias abajo. Consulte nuestra <a href="/privacy.html">Política de Privacidad</a>.',
+    cookie_text:'Usamos cookies para mejorar su experiencia, analizar el tráfico y personalizar el contenido. Gestione sus preferencias abajo. Consulte nuestra <a href="/privacy">Política de Privacidad</a>.',
     cookie_cat1:'🔒 Necesarios', cookie_cat1_desc:'Esenciales para el funcionamiento del sitio. No se pueden desactivar.',
     cookie_cat2:'📊 Analíticos', cookie_cat2_desc:'Nos ayudan a entender cómo los visitantes interactúan con el sitio (Google Analytics).',
     cookie_cat3:'📣 Marketing', cookie_cat3_desc:'Permiten mostrar anuncios relevantes y medir el rendimiento de campañas.',
     cookie_accept:'Aceptar Todos', cookie_save:'Guardar Preferencias', cookie_decline:'Rechazar',
     form_newsletter:'Acepto recibir información y novedades de Renova Mais por email. Puede darse de baja en cualquier momento.',
-    form_rgpd:'He leído y acepto la <a href="/privacy.html" style="color:var(--accent);text-decoration:underline">Política de Privacidad</a>. Mis datos se utilizarán exclusivamente para responder a esta solicitud. *'
+    form_rgpd:'He leído y acepto la <a href="/privacy" style="color:var(--accent);text-decoration:underline">Política de Privacidad</a>. Mis datos se utilizarán exclusivamente para responder a esta solicitud. *'
   }
 };
 
@@ -1163,7 +1185,12 @@ function hideCookieBanner() { banner.classList.remove('show'); overlay.classList
 function saveCookieConsent(analytics, marketing) {
   const prefs = { necessary:true, analytics, marketing, ts: Date.now(), v:'1' };
   localStorage.setItem('rm_cookies', JSON.stringify(prefs));
-  gtag('consent','update',{ analytics_storage: analytics?'granted':'denied', ad_storage: marketing?'granted':'denied' });
+  gtag('consent','update',{
+    analytics_storage: analytics?'granted':'denied',
+    ad_storage: marketing?'granted':'denied',
+    ad_user_data: marketing?'granted':'denied',
+    ad_personalization: marketing?'granted':'denied'
+  });
   hideCookieBanner();
 }
 if (!localStorage.getItem('rm_cookies')) setTimeout(showCookieBanner, 1800);
@@ -1176,6 +1203,33 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
     const target = document.querySelector(a.getAttribute('href'));
     if (target) { e.preventDefault(); target.scrollIntoView({behavior:'smooth', block:'start'}); }
+  });
+});
+
+// ===================== LEAD ATTRIBUTION & EVENTS =====================
+const leadParams = ['utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid','gbraid','wbraid'];
+const query = new URLSearchParams(window.location.search);
+document.querySelectorAll('form').forEach(form => {
+  const landing = form.querySelector('input[name="landing_url"]');
+  if (landing) landing.value = window.location.href;
+  leadParams.forEach(param => {
+    const input = form.querySelector(`input[name="${param}"]`);
+    if (input) input.value = query.get(param) || '';
+  });
+  form.addEventListener('submit', () => {
+    if (typeof gtag === 'function') {
+      gtag('event','generate_lead',{event_category:'lead',event_label:form.id || 'form'});
+    }
+  });
+});
+document.querySelectorAll('a[href^="tel:"]').forEach(link => {
+  link.addEventListener('click', () => {
+    if (typeof gtag === 'function') gtag('event','click_telefone',{event_category:'lead',event_label:link.getAttribute('href')});
+  });
+});
+document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
+  link.addEventListener('click', () => {
+    if (typeof gtag === 'function') gtag('event','click_whatsapp',{event_category:'lead',event_label:link.getAttribute('href')});
   });
 });
 </script>

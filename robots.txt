@@ -1,6 +1,7 @@
 User-agent: *
 Allow: /
 Disallow: /obrigado.html
+Disallow: /obrigado
 Disallow: /404.html
 
 Sitemap: https://renovamais.pt/sitemap.xml
