@@ -79,6 +79,7 @@ gtag('config','G-EXPZ8HG8RB',{anonymize_ip:true});
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;font-size:16px}
+section[id]{scroll-margin-top:84px}
 body{font-family:'Montserrat',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;transition:background .25s,color .25s}
 img{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
@@ -163,7 +164,7 @@ p{line-height:1.7}
 .hero-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:#A8FF00;animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
-.hero h1{font-size:clamp(2.65rem,5.2vw,4.9rem);line-height:1;color:var(--hero-text);animation:fadeUp .8s .15s ease both}
+.hero h1{font-size:clamp(2.65rem,4.8vw,4.5rem);line-height:1;color:var(--hero-text);animation:fadeUp .8s .15s ease both}
 .hero h1 span{color:#A8FF00}
 .hero-copy{font-size:1.08rem;color:var(--hero-muted);max-width:620px;margin:24px 0 34px;animation:fadeUp .8s .3s ease both}
 .hero-actions{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:36px;animation:fadeUp .8s .45s ease both}
@@ -179,6 +180,8 @@ p{line-height:1.7}
 .lead-copy{display:flex;flex-direction:column;justify-content:center}
 .lead-copy h2{font-size:clamp(1.8rem,3.2vw,2.65rem)}
 .lead-copy p{color:var(--muted);margin-top:16px}
+.form-priority{display:flex;align-items:center;gap:9px;margin-bottom:20px;color:var(--muted);font-size:.82rem}
+.form-priority::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 5px rgba(168,255,0,.1)}
 .quick-list{display:grid;gap:12px;margin-top:24px}
 .quick-list li{display:flex;gap:10px;color:var(--muted);line-height:1.5}
 .quick-list li::before{content:'';width:7px;height:7px;background:var(--accent);margin-top:8px;flex:0 0 7px}
@@ -206,6 +209,7 @@ textarea{min-height:118px;resize:vertical}
 .ba-card:hover .ba-shot img{transform:scale(1.035)}
 .ba-label{position:absolute;left:12px;top:12px;background:rgba(13,13,13,.78);color:#fff;border:1px solid rgba(255,255,255,.16);padding:6px 10px;border-radius:3px;font-size:.68rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
 .ba-body{padding:24px}
+.case-note{font-family:'Poppins',sans-serif;font-size:.68rem!important;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)!important;margin:0 0 9px!important}
 .ba-body p{color:var(--muted);font-size:.92rem;margin-top:10px}
 .ba-meta{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}
 .ba-meta span{border:1px solid var(--line);background:var(--surface2);padding:6px 10px;border-radius:999px;font-size:.72rem;font-weight:700;color:var(--muted)}
@@ -226,6 +230,10 @@ textarea{min-height:118px;resize:vertical}
 .trust{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
 .trust-panel{border:1px solid var(--line);background:var(--surface);padding:34px}
 .trust-panel p{color:var(--muted);margin-top:12px}
+.trust-facts{display:grid;grid-template-columns:1fr 1fr;gap:1px;margin-top:26px;background:var(--line);border:1px solid var(--line)}
+.trust-fact{background:var(--surface);padding:20px}
+.trust-fact strong{display:block;font-family:'Exo 2',sans-serif;font-size:1.02rem;margin-bottom:5px}
+.trust-fact span{display:block;color:var(--muted);font-size:.8rem;line-height:1.5}
 .faq{display:grid;gap:1px;background:var(--line);border:1px solid var(--line)}
 .faq-item{background:var(--surface)}
 .faq-q{width:100%;display:flex;justify-content:space-between;gap:20px;padding:22px 24px;background:transparent;color:var(--text);text-align:left;font-family:'Exo 2',sans-serif;font-size:1.05rem;font-weight:800}
@@ -240,12 +248,12 @@ textarea{min-height:118px;resize:vertical}
 .wa-float{position:fixed;right:22px;bottom:22px;z-index:60;width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--whatsapp);box-shadow:0 14px 34px rgba(37,211,102,.32)}
 .wa-float svg{width:29px;height:29px;fill:#fff}
 .mobile-sticky-actions{display:none}
-#cookie-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:79;opacity:0;pointer-events:none;transition:opacity .3s}
-#cookie-overlay.show{opacity:1;pointer-events:auto}
-#cookie-banner{position:fixed;left:50%;bottom:20px;transform:translateX(-50%) translateY(120%);z-index:80;width:min(620px,calc(100% - 32px));background:var(--surface);border:1px solid var(--line);box-shadow:0 24px 70px rgba(0,0,0,.24);padding:24px;transition:transform .35s}
+#cookie-overlay{display:none}
+#cookie-banner{position:fixed;left:50%;bottom:16px;transform:translateX(-50%) translateY(calc(100% + 32px));z-index:80;width:min(680px,calc(100% - 32px));background:var(--surface);border:1px solid var(--line);box-shadow:0 18px 55px rgba(0,0,0,.22);padding:20px 22px;transition:transform .35s}
 #cookie-banner.show{transform:translateX(-50%) translateY(0)}
 #cookie-banner h3{font-family:'Exo 2',sans-serif;font-size:1.15rem;margin-bottom:8px}
 #cookie-banner p{font-size:.82rem;color:var(--muted)}
+#cookie-banner p a{color:var(--accent-strong);text-decoration:underline}
 .cookie-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
 .cookie-actions button{flex:1;padding:12px 14px;border-radius:4px;font-size:.8rem;font-weight:800;text-transform:uppercase}
 .cookie-accept{background:var(--accent);color:var(--accent-text)}
@@ -273,7 +281,7 @@ textarea{min-height:118px;resize:vertical}
   .hero{height:auto;min-height:100svh;padding:104px 0 58px}
   .hero::before{background:linear-gradient(180deg,rgba(7,7,7,.9),rgba(7,7,7,.72)),url('img/wc-ba3.jpg') center/cover no-repeat}
   .hero-badge{font-size:.64rem;padding:5px 12px;margin-bottom:20px}
-  .hero h1{font-size:clamp(2.15rem,10vw,3.2rem);line-height:1.02}
+  .hero h1{font-size:clamp(2.05rem,9.2vw,2.85rem);line-height:1.02}
   .hero-copy{font-size:1rem;margin:18px 0 24px}
   .hero-actions,.submit-row{flex-direction:column;align-items:stretch}
   .hero-actions .btn,.submit-row .btn{width:100%}
@@ -281,6 +289,7 @@ textarea{min-height:118px;resize:vertical}
   .proof-cell{padding:16px}
   .lead-copy,.lead-form{padding:24px}
   .form-grid,.included,.process{grid-template-columns:1fr}
+  .trust-facts{grid-template-columns:1fr}
   .ba-shot{min-height:250px}
   .section{padding:72px 0}
   .media-frame img{height:340px}
@@ -288,6 +297,13 @@ textarea{min-height:118px;resize:vertical}
   .wa-float{display:none}
   .mobile-sticky-actions{position:fixed;left:0;right:0;bottom:0;z-index:59;display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:var(--nav-bg);backdrop-filter:blur(16px);border-top:1px solid var(--line)}
   .mobile-sticky-actions .btn{min-height:46px;padding:12px 8px;font-size:.66rem}
+  #cookie-banner{left:0;bottom:67px;width:100%;max-height:calc(100svh - 82px);overflow:auto;transform:translateY(calc(100% + 84px));padding:16px 18px;border-left:0;border-right:0;border-bottom:0}
+  #cookie-banner.show{transform:translateY(0)}
+  #cookie-banner h3{font-size:1rem;margin-bottom:5px}
+  #cookie-banner p{font-size:.75rem;line-height:1.45}
+  .cookie-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
+  .cookie-actions .cookie-accept{grid-column:1/-1}
+  .cookie-actions button{padding:11px 8px;font-size:.7rem}
 }
 </style>
 </head>
@@ -319,8 +335,8 @@ textarea{min-height:118px;resize:vertical}
   <section class="hero">
     <div class="container hero-inner">
       <div class="hero-badge"><span data-i18n="hero_badge">Cascais · Oeiras · Sintra · Amadora · Visita técnica</span></div>
-      <h1 data-i18n="hero_title">Remodelação de <span>casas de banho</span> em Cascais, Oeiras, Sintra e Amadora</h1>
-      <p class="hero-copy" data-i18n="hero_copy">Transforme uma casa de banho antiga, fria ou pouco funcional num espaço moderno, seguro e fácil de manter. A Renova Mais trata da obra completa: planeamento, demolição, canalização, electricidade, revestimentos, loiças e acabamentos.</p>
+      <h1 data-i18n="hero_title">Remodelamos a sua <span>casa de banho</span> do início à entrega</h1>
+      <p class="hero-copy" data-i18n="hero_copy">Obra completa em Cascais, Oeiras, Sintra e Amadora: demolição, canalização, electricidade, impermeabilização, revestimentos e acabamentos, coordenados por uma única equipa.</p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="#orcamento" data-i18n="hero_cta">Quero uma visita técnica</a>
         <a class="btn btn-ghost" href="https://wa.me/351912911081?text=Ola%2C%20quero%20um%20orcamento%20para%20remodelar%20uma%20casa%20de%20banho." target="_blank" rel="noopener" data-i18n="hero_whatsapp">Falar no WhatsApp</a>
@@ -339,7 +355,7 @@ textarea{min-height:118px;resize:vertical}
         <div class="lead-copy">
           <p class="section-kicker">Pedido de orçamento</p>
           <h2>Receba uma proposta clara antes de começar a obra</h2>
-          <p>Conte-nos o estado actual da casa de banho, a zona e o prazo desejado. A equipa analisa o pedido e combina o próximo passo consigo.</p>
+          <p>Diga-nos onde fica a obra e o que pretende mudar. A equipa analisa o pedido e combina o próximo passo consigo.</p>
           <ul class="quick-list">
             <li>Visita técnica para perceber medidas, acessos e pontos de água.</li>
             <li>Orçamento por fases, com materiais e trabalhos identificados.</li>
@@ -347,6 +363,7 @@ textarea{min-height:118px;resize:vertical}
           </ul>
         </div>
         <div class="lead-form">
+          <div class="form-priority">Pedido rápido · resposta habitual em 24 horas</div>
           <form action="https://formspree.io/f/xaqzqozo" method="POST" id="bathroomLeadForm">
             <input type="hidden" name="_next" value="https://renovamais.pt/obrigado">
             <input type="hidden" name="_subject" value="Novo pedido - remodelação de casa de banho">
@@ -369,48 +386,13 @@ textarea{min-height:118px;resize:vertical}
                 <label for="telefone">Telefone</label>
                 <input id="telefone" name="telefone" type="tel" autocomplete="tel" required placeholder="+351 9xx xxx xxx">
               </div>
-              <div class="form-group">
-                <label for="email">Email</label>
-                <input id="email" name="email" type="email" autocomplete="email" required placeholder="nome@email.pt">
-              </div>
-              <div class="form-group">
+              <div class="form-group full">
                 <label for="localidade">Localidade</label>
                 <input id="localidade" name="localidade" type="text" required placeholder="Cascais, Oeiras, Sintra, Amadora...">
               </div>
-              <div class="form-group">
-                <label for="tipo_obra">Tipo de obra</label>
-                <select id="tipo_obra" name="tipo_obra" required>
-                  <option value="">Selecionar</option>
-                  <option>Remodelação completa</option>
-                  <option>Substituir loiças e moveis</option>
-                  <option>Resolver infiltrações</option>
-                  <option>Actualizar canalização</option>
-                  <option>Ainda não sei</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="prazo">Quando pretende avançar?</label>
-                <select id="prazo" name="prazo" required>
-                  <option value="">Selecionar</option>
-                  <option>O mais rápido possível</option>
-                  <option>Nos próximos 30 dias</option>
-                  <option>Nos próximos 2 a 3 meses</option>
-                  <option>Ainda estou a comparar opcoes</option>
-                </select>
-              </div>
               <div class="form-group full">
                 <label for="mensagem">O que quer mudar?</label>
-                <textarea id="mensagem" name="mensagem" required placeholder="Ex: Casa de banho antiga em Cascais/Oeiras/Sintra/Amadora. Quero trocar canalização, base de duche, revestimento, móvel e sanita."></textarea>
-              </div>
-              <div class="form-group full">
-                <label for="valor_estimado">Valor estimado da oportunidade</label>
-                <select id="valor_estimado" name="valor_estimado">
-                  <option value="">Prefiro falar primeiro</option>
-                  <option>Até 5.000 EUR</option>
-                  <option>5.000 a 10.000 EUR</option>
-                  <option>10.000 a 20.000 EUR</option>
-                  <option>Mais de 20.000 EUR</option>
-                </select>
+                <textarea id="mensagem" name="mensagem" required placeholder="Ex: Quero substituir a banheira por duche e renovar revestimentos, móvel e sanita."></textarea>
               </div>
               <div class="form-group full">
                 <label class="check-row">
@@ -420,8 +402,8 @@ textarea{min-height:118px;resize:vertical}
               </div>
             </div>
             <div class="submit-row">
-              <button class="btn btn-primary" type="submit">Enviar pedido</button>
-              <span class="small-note">Sem compromisso. Respondemos por telefone, email ou WhatsApp.</span>
+              <button class="btn btn-primary" type="submit">Pedir contacto para visita</button>
+              <span class="small-note">Leva cerca de 1 minuto. Sem compromisso.</span>
             </div>
           </form>
         </div>
@@ -433,8 +415,8 @@ textarea{min-height:118px;resize:vertical}
     <div class="container">
       <div class="section-head">
         <p class="section-kicker" data-i18n="ba_kicker">Antes e depois</p>
-        <h2 data-i18n="ba_title">Quatro transformações que fazem o cliente imaginar a obra pronta</h2>
-        <p style="color:var(--muted);margin-top:16px" data-i18n="ba_intro">Estes exemplos visuais mostram o tipo de salto que procuramos entregar: mais luz, melhor circulação, materiais duráveis e uma casa de banho que parece realmente acabada.</p>
+        <h2 data-i18n="ba_title">Obras reais, antes e depois</h2>
+        <p style="color:var(--muted);margin-top:16px" data-i18n="ba_intro">Fotografias de trabalhos Renova Mais que mostram mudanças de layout, luz, circulação e acabamentos.</p>
       </div>
       <div class="ba-grid">
         <article class="ba-card">
@@ -449,6 +431,7 @@ textarea{min-height:118px;resize:vertical}
             </div>
           </div>
           <div class="ba-body">
+            <p class="case-note">Intervenção real Renova Mais</p>
             <h3 data-i18n="ba1_title">Duche amplo e visual limpo</h3>
             <p data-i18n="ba1_copy">Troca de banheira por base de duche, revestimento claro e arrumação discreta para ganhar espaço sem perder conforto.</p>
             <div class="ba-meta"><span>Base de duche</span><span>Revestimento</span><span>Arrumação</span></div>
@@ -467,6 +450,7 @@ textarea{min-height:118px;resize:vertical}
             </div>
           </div>
           <div class="ba-body">
+            <p class="case-note">Intervenção real Renova Mais</p>
             <h3 data-i18n="ba2_title">Mais luz, menos ruído visual</h3>
             <p data-i18n="ba2_copy">Iluminação melhor posicionada, espelho maior e materiais neutros para criar sensação de amplitude.</p>
             <div class="ba-meta"><span>Iluminação</span><span>Espelho</span><span>Cerâmica</span></div>
@@ -485,6 +469,7 @@ textarea{min-height:118px;resize:vertical}
             </div>
           </div>
           <div class="ba-body">
+            <p class="case-note">Intervenção real Renova Mais</p>
             <h3 data-i18n="ba3_title">Casa de banho pequena, sensação maior</h3>
             <p data-i18n="ba3_copy">Layout mais inteligente, cores claras e loiças compactas para aproveitar cada centímetro.</p>
             <div class="ba-meta"><span>Layout</span><span>Loiças</span><span>Espaço</span></div>
@@ -503,6 +488,7 @@ textarea{min-height:118px;resize:vertical}
             </div>
           </div>
           <div class="ba-body">
+            <p class="case-note">Intervenção real Renova Mais</p>
             <h3 data-i18n="ba4_title">Acabamento com aspecto premium</h3>
             <p data-i18n="ba4_copy">Revestimentos coordenados, zona de duche mais funcional e detalhes que valorizam o imóvel no primeiro olhar.</p>
             <div class="ba-meta"><span>Premium</span><span>Duche</span><span>Valorização</span></div>
@@ -571,12 +557,18 @@ textarea{min-height:118px;resize:vertical}
     <div class="container trust">
       <div>
         <p class="section-kicker">Confiança</p>
-        <h2>Menos incerteza para uma decisão mais segura</h2>
-        <p style="color:var(--muted);margin-top:18px">Uma casa de banho envolve canalização, electricidade, impermeabilização e acabamentos no mesmo espaço. A diferença está em coordenar esses trabalhos antes de partir paredes.</p>
+        <h2>Uma empresa identificada. Trabalhos que pode ver.</h2>
+        <p style="color:var(--muted);margin-top:18px">Antes de decidir, deve saber quem executa a obra, como será contactado e o que está incluído na proposta.</p>
+        <div class="trust-facts">
+          <div class="trust-fact"><strong>Renova Mais, LDA</strong><span>Empresa portuguesa identificada no site.</span></div>
+          <div class="trust-fact"><strong>NIF 519467892</strong><span>Dados legais apresentados de forma transparente.</span></div>
+          <div class="trust-fact"><strong>Fotografias reais</strong><span>Imagens de trabalhos fornecidas pela Renova Mais.</span></div>
+          <div class="trust-fact"><strong>Contacto direto</strong><span>Telefone e WhatsApp: +351 912 911 081.</span></div>
+        </div>
       </div>
       <div class="trust-panel">
-        <h3>O que valorizamos em cada obra</h3>
-        <p>Orçamento transparente, prazos combinados, comunicação directa e cuidado com os detalhes que ficam escondidos depois do revestimento.</p>
+        <h3>O que recebe antes de decidir</h3>
+        <p>Visita técnica, análise do trabalho necessário e proposta com os serviços previstos. Só depois escolhe se quer avançar.</p>
         <p>Damos prioridade a Cascais, Oeiras, Sintra e Amadora. Lisboa cidade é analisada mediante disponibilidade de agenda e enquadramento da obra.</p>
         <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:24px">
           <a class="btn btn-primary" href="#orcamento">Pedir visita</a>
@@ -631,9 +623,9 @@ textarea{min-height:118px;resize:vertical}
 </a>
 
 <div id="cookie-overlay"></div>
-<div id="cookie-banner" role="dialog" aria-modal="true" aria-label="Preferencias de cookies">
+<div id="cookie-banner" role="region" aria-live="polite" aria-label="Preferências de cookies">
   <h3>Privacidade e medição</h3>
-  <p>Usamos cookies analíticos e de marketing apenas com consentimento para medir campanhas e melhorar pedidos de orçamento. Pode aceitar ou recusar.</p>
+  <p>Usamos cookies opcionais para medir campanhas e melhorar o site. Pode aceitar, limitar ou recusar. <a href="/privacy">Saiba mais</a>.</p>
   <div class="cookie-actions">
     <button class="cookie-accept" id="cookieAccept" type="button">Aceitar</button>
     <button class="cookie-save" id="cookieAnalytics" type="button">Só analíticos</button>
@@ -648,16 +640,16 @@ const translations = {
     nav_incluido:'Incluído',
     nav_orcamento:'Orçamento',
     nav_cta:'Pedir Orçamento',
-    hero_title:'Remodelação de <span>casas de banho</span> em Cascais, Oeiras, Sintra e Amadora',
-    hero_copy:'Transforme uma casa de banho antiga, fria ou pouco funcional num espaço moderno, seguro e fácil de manter. A Renova Mais trata da obra completa: planeamento, demolição, canalização, electricidade, revestimentos, loiças e acabamentos.',
+    hero_title:'Remodelamos a sua <span>casa de banho</span> do início à entrega',
+    hero_copy:'Obra completa em Cascais, Oeiras, Sintra e Amadora: demolição, canalização, electricidade, impermeabilização, revestimentos e acabamentos, coordenados por uma única equipa.',
     hero_cta:'Quero uma visita técnica',
     hero_whatsapp:'Falar no WhatsApp',
     proof_1:'anos de experiência em obra',
     proof_2:'orçamento inicial sem compromisso',
     proof_3:'resposta habitual a novos pedidos',
     ba_kicker:'Antes e depois',
-    ba_title:'Quatro transformações que fazem o cliente imaginar a obra pronta',
-    ba_intro:'Estes exemplos visuais mostram o tipo de salto que procuramos entregar: mais luz, melhor circulação, materiais duráveis e uma casa de banho que parece realmente acabada.',
+    ba_title:'Obras reais, antes e depois',
+    ba_intro:'Fotografias de trabalhos Renova Mais que mostram mudanças de layout, luz, circulação e acabamentos.',
     before:'Antes',
     after:'Depois',
     ba1_title:'Duche amplo e visual limpo',
@@ -676,16 +668,16 @@ const translations = {
     nav_incluido:'Included',
     nav_orcamento:'Quote',
     nav_cta:'Request Quote',
-    hero_title:'Bathroom <span>renovation</span> in Cascais, Oeiras, Sintra and Amadora',
-    hero_copy:'Turn an old, cold or impractical bathroom into a modern, safe and easy-to-maintain space. Renova Mais handles the full job: planning, demolition, plumbing, electricity, tiling, sanitaryware and finishes.',
+    hero_title:'We renovate your <span>bathroom</span> from start to handover',
+    hero_copy:'Complete renovation in Cascais, Oeiras, Sintra and Amadora: demolition, plumbing, electricity, waterproofing, tiling and finishes, coordinated by one team.',
     hero_cta:'Book a technical visit',
     hero_whatsapp:'Chat on WhatsApp',
     proof_1:'years of site experience',
     proof_2:'initial quote with no commitment',
     proof_3:'usual reply to new enquiries',
     ba_kicker:'Before and after',
-    ba_title:'Four transformations that help clients picture the finished result',
-    ba_intro:'These visual examples show the type of leap we aim for: more light, better circulation, durable materials and a bathroom that feels truly finished.',
+    ba_title:'Real projects, before and after',
+    ba_intro:'Photos of Renova Mais projects showing changes in layout, lighting, circulation and finishes.',
     before:'Before',
     after:'After',
     ba1_title:'Spacious shower and cleaner look',
@@ -704,16 +696,16 @@ const translations = {
     nav_incluido:'Incluido',
     nav_orcamento:'Presupuesto',
     nav_cta:'Pedir Presupuesto',
-    hero_title:'Reforma de <span>baños</span> en Cascais, Oeiras, Sintra y Amadora',
-    hero_copy:'Transforme un baño antiguo, frío o poco funcional en un espacio moderno, seguro y fácil de mantener. Renova Mais gestiona toda la obra: planificación, demolición, fontanería, electricidad, revestimientos, sanitarios y acabados.',
+    hero_title:'Reformamos su <span>baño</span> de principio a entrega',
+    hero_copy:'Obra completa en Cascais, Oeiras, Sintra y Amadora: demolición, fontanería, electricidad, impermeabilización, revestimientos y acabados, coordinados por un único equipo.',
     hero_cta:'Quiero una visita técnica',
     hero_whatsapp:'Hablar por WhatsApp',
     proof_1:'años de experiencia en obra',
     proof_2:'presupuesto inicial sin compromiso',
     proof_3:'respuesta habitual a nuevos pedidos',
     ba_kicker:'Antes y después',
-    ba_title:'Cuatro transformaciones que ayudan al cliente a imaginar la obra terminada',
-    ba_intro:'Estos ejemplos visuales muestran el salto que buscamos: más luz, mejor circulación, materiales duraderos y un baño que parece realmente terminado.',
+    ba_title:'Obras reales, antes y después',
+    ba_intro:'Fotografías de trabajos de Renova Mais que muestran cambios de distribución, luz, circulación y acabados.',
     before:'Antes',
     after:'Después',
     ba1_title:'Ducha amplia y visual limpio',
