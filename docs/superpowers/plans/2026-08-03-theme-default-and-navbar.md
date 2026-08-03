@@ -28,7 +28,7 @@
 - Consumes: `localStorage.getItem('rm_theme')`, `data-theme`, `.scrolled`
 - Produces: `data-theme="light"` initial markup, light/dark navigation CSS variables, persisted theme selection
 
-- [ ] **Step 1: Run baseline assertions that expose the old behavior**
+- [x] **Step 1: Run baseline assertions that expose the old behavior**
 
 ```powershell
 $source = Get-Content -Raw index.html
@@ -39,15 +39,15 @@ if ($source -notmatch '#navbar\{[^}]*background:rgba\(13,13,13,.76\)') { throw '
 
 Expected: PASS against the current implementation, documenting all three behaviors that must change.
 
-- [ ] **Step 2: Add theme-specific navigation variables**
+- [x] **Step 2: Add theme-specific navigation variables**
 
 In `[data-theme="dark"]`, define dark navigation background, scrolled background, border, primary text, muted text, control background, and control border values. Define corresponding light values in `[data-theme="light"]` using translucent `#F5F4F0`-based backgrounds and dark text.
 
-- [ ] **Step 3: Replace hard-coded navigation colors**
+- [x] **Step 3: Replace hard-coded navigation colors**
 
 Update `#navbar`, `#navbar.scrolled`, `.nav-logo`, `.nav-links a`, `.lang-btn`, `.lang-btn.active`, `.lang-btn:hover`, `.lang-sep`, `.theme-toggle`, and `.hamburger span` to consume the new CSS variables while retaining the accent color for active and hover states.
 
-- [ ] **Step 4: Make light the safe initial and first-visit theme**
+- [x] **Step 4: Make light the safe initial and first-visit theme**
 
 Change the root markup to `data-theme="light"`. Replace the fallback with an explicit stored-value check:
 
@@ -58,7 +58,7 @@ let isDark = savedTheme === 'dark';
 
 Keep `applyTheme()` responsible for applying and persisting choices so existing visitors restore either valid stored choice and first-time visitors persist light.
 
-- [ ] **Step 5: Run static regression assertions**
+- [x] **Step 5: Run static regression assertions**
 
 ```powershell
 $source = Get-Content -Raw index.html
@@ -71,11 +71,11 @@ if ($source -notmatch 'background:var\(--nav-bg\)') { throw 'Theme-aware navbar 
 
 Expected: PASS.
 
-- [ ] **Step 6: Verify browser behavior locally**
+- [x] **Step 6: Verify browser behavior locally**
 
 Open the page with `rm_theme` absent and confirm light mode. Toggle dark, reload, and confirm dark mode. Toggle light, reload, and confirm light mode. In both themes, scroll beyond 60 pixels and confirm the strip gains opacity while text, controls, and hamburger retain sufficient contrast.
 
-- [ ] **Step 7: Commit the implementation**
+- [x] **Step 7: Commit the implementation**
 
 ```powershell
 git add -- index.html docs/superpowers/plans/2026-08-03-theme-default-and-navbar.md
