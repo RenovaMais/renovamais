@@ -16,15 +16,15 @@
 <meta property="og:url" content="https://renovamais.pt/">
 <meta property="og:title" content="Renova Mais — Remodelação em Cascais, Sintra e Oeiras | Orçamento Grátis">
 <meta property="og:description" content="Mais de 10 anos a transformar espaços em Lisboa. Orçamento gratuito e sem compromisso.">
-<meta property="og:image" content="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&h=630&q=80&auto=format&fit=crop">
+<meta property="og:image" content="https://renovamais.pt/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:type" content="image/png">
 <meta property="og:locale" content="pt_PT">
 <meta property="og:site_name" content="Renova Mais">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Renova Mais — Remodelação em Cascais, Sintra e Oeiras | Orçamento Grátis">
-<meta name="twitter:image" content="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&h=630&q=80&auto=format&fit=crop">
+<meta name="twitter:image" content="https://renovamais.pt/og-image.png">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 
 <!-- Google Analytics -->
@@ -362,18 +362,18 @@ footer{background:var(--bg3);border-top:1px solid var(--border);padding:64px 0 3
         <span class="lang-sep">|</span>
         <button class="lang-btn" data-lang="es">ES</button>
       </div>
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema claro/escuro">
         <svg id="iconSun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
         <svg id="iconMoon" viewBox="0 0 24 24" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
       </button>
       <a href="#contacto" class="btn btn-primary nav-cta" data-i18n="nav_cta">Orçamento Grátis</a>
     </div>
-    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    <button class="hamburger" id="hamburger" type="button" aria-label="Abrir menu" aria-controls="mobileMenu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </nav>
 
 <!-- MOBILE MENU -->
-<div class="mobile-menu" id="mobileMenu">
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
   <a href="#sobre" data-i18n="nav_sobre">Sobre</a>
   <a href="#servicos" data-i18n="nav_servicos">Serviços</a>
   <a href="/remodelacao-casas-de-banho" data-i18n="nav_casas_banho">Casas de Banho</a>
@@ -731,7 +731,7 @@ footer{background:var(--bg3);border-top:1px solid var(--border);padding:64px 0 3
       <div class="reveal">
         <p class="section-label" data-i18n="cont_label">Contacto</p>
         <h2 class="section-title" data-i18n="cont_title">Vamos falar sobre a sua obra</h2>
-        <p class="section-sub" data-i18n="cont_desc">Preencha o formulário ou contacte-nos directamente. Respondemos sempre em menos de 24 horas.</p>
+        <p class="section-sub" data-i18n="cont_desc">Preencha o formulário ou contacte-nos directamente. Respondemos com a maior brevidade possível.</p>
         <div class="contacto-info" style="margin-top:48px">
           <div class="contact-item">
             <div class="contact-icon">📞</div>
@@ -897,21 +897,21 @@ footer{background:var(--bg3);border-top:1px solid var(--border);padding:64px 0 3
         <strong data-i18n="cookie_cat1">🔒 Necessários</strong>
         <span data-i18n="cookie_cat1_desc">Essenciais para o funcionamento do site. Não podem ser desactivados.</span>
       </div>
-      <label class="cookie-toggle"><input type="checkbox" checked disabled><span class="cookie-toggle-slider"></span></label>
+      <label class="cookie-toggle"><input type="checkbox" checked disabled aria-label="Cookies necessários, sempre activos"><span class="cookie-toggle-slider"></span></label>
     </div>
     <div class="cookie-cat">
       <div class="cookie-cat-info">
         <strong data-i18n="cookie_cat2">📊 Analíticos</strong>
         <span data-i18n="cookie_cat2_desc">Ajudam-nos a perceber como os visitantes interagem com o site (Google Analytics).</span>
       </div>
-      <label class="cookie-toggle"><input type="checkbox" id="ckAnalytics"><span class="cookie-toggle-slider"></span></label>
+      <label class="cookie-toggle"><input type="checkbox" id="ckAnalytics" aria-label="Permitir cookies analíticos"><span class="cookie-toggle-slider"></span></label>
     </div>
     <div class="cookie-cat">
       <div class="cookie-cat-info">
         <strong data-i18n="cookie_cat3">📣 Marketing</strong>
         <span data-i18n="cookie_cat3_desc">Permitem mostrar anúncios relevantes e medir o desempenho de campanhas.</span>
       </div>
-      <label class="cookie-toggle"><input type="checkbox" id="ckMarketing"><span class="cookie-toggle-slider"></span></label>
+      <label class="cookie-toggle"><input type="checkbox" id="ckMarketing" aria-label="Permitir cookies de marketing"><span class="cookie-toggle-slider"></span></label>
     </div>
   </div>
   <div class="cookie-btns">
@@ -942,7 +942,7 @@ const T = {
     serv3_name:'Reabilitação de Fachadas', serv3_desc:'Restauro e renovação de fachadas com isolamento térmico, reboco e pintura exterior especializada.',
     serv4_name:'Pinturas e Acabamentos', serv4_desc:'Pintura interior e exterior, estuques, gesso cartonado e revestimentos decorativos de excelência.',
     serv5_name:'Pavimentos e Azulejos', serv5_desc:'Aplicação de cerâmica, soalho, microcimento, vinílicos e outros pavimentos decorativos.',
-    serv6_name:'Construção e Ampliações', serv6_desc:'Construção de raiz, ampliações e obras de estrutura com projecto e licenciamento incluídos.',
+    serv6_name:'Construção e Ampliações', serv6_desc:'Construção de raiz, ampliações e obras de estrutura, em articulação com projecto técnico especializado.',
     serv7_name:'Gestão de Obras', serv7_desc:'Coordenamos todas as fases da sua obra em seu nome — projecto, fornecedores, prazos e qualidade. Ideal para clientes não residentes ou com agenda preenchida.',
     proc_label:'Como Trabalhamos', proc_title:'O nosso processo',
     proc1_title:'Contacto', proc1_desc:'Fale connosco pelo formulário, telefone ou WhatsApp. A nossa equipa responde com a maior brevidade possível.',
@@ -966,7 +966,7 @@ const T = {
     faq4_q:'É necessário sair de casa durante as obras?', faq4_a:'Depende do tipo e extensão da obra. Para remodelações completas geralmente recomendamos a saída temporária; para obras parcelares ou de menor dimensão poderá não ser necessário. Cada situação é analisada individualmente.',
     faq5_q:'Tratam do licenciamento e processos camarários?', faq5_a:'O licenciamento e processos administrativos são da responsabilidade do dono da obra. Nos casos de Gestão de Obra completa — nomeadamente para clientes não residentes em Portugal — podemos, a pedido, coordenar com técnicos especializados. Consulte-nos para mais informação.',
     faq6_q:'Que formas de pagamento aceitam?', faq6_a:'Aceitamos transferência bancária e numerário. O pagamento é habitualmente faseado: entrada na aprovação do orçamento e liquidações intercalares conforme o avanço da obra, com condições definidas no contrato.',
-    cont_label:'Contacto', cont_title:'Vamos falar sobre a sua obra', cont_desc:'Preencha o formulário ou contacte-nos directamente. Respondemos sempre em menos de 24 horas.',
+    cont_label:'Contacto', cont_title:'Vamos falar sobre a sua obra', cont_desc:'Preencha o formulário ou contacte-nos directamente. Respondemos com a maior brevidade possível.',
     cont_telefone:'Telefone / WhatsApp', cont_zona:'Zona de Actuação', cont_horario:'Horário', cont_horas:'Seg – Sex: 8h00 – 18h00',
     form_nome:'Nome', form_telefone:'Telefone', form_email:'Email', form_servico:'Tipo de Obra', form_selecione:'Selecione o serviço', form_outro:'Outro', form_mensagem:'Descreva a sua obra', form_submit:'Pedir Orçamento Gratuito →',
     footer_about:'Especialistas em renovação, remodelação e reabilitação de imóveis em Lisboa e área metropolitana. Mais de 10 anos de excelência.',
@@ -1022,7 +1022,7 @@ const T = {
     faq4_q:'Do I need to leave home during the works?', faq4_a:'It depends on the type and extent of the works. For full renovations we generally recommend it; for partial or smaller works it may not be necessary. Each situation is assessed individually.',
     faq5_q:'Do you handle licensing and municipal processes?', faq5_a:'Licensing and administrative processes are the responsibility of the project owner (client). For full project management — particularly for clients not resident in Portugal — we can, upon express request, coordinate with specialist technicians. Please contact us for more information on this specific service.',
     faq6_q:'What payment methods do you accept?', faq6_a:'We accept bank transfer and cash. Payment is typically phased: an initial deposit on quote approval and interim payments as work progresses, with conditions defined in the contract.',
-    cont_label:'Contact', cont_title:'Let\'s talk about your project', cont_desc:'Fill in the form or contact us directly. We always reply within 24 hours.',
+    cont_label:'Contact', cont_title:'Let\'s talk about your project', cont_desc:'Fill in the form or contact us directly. We will reply as soon as possible.',
     cont_telefone:'Phone / WhatsApp', cont_zona:'Service Area', cont_horario:'Hours', cont_horas:'Mon – Fri: 8am – 6pm',
     form_nome:'Name', form_telefone:'Phone', form_email:'Email', form_servico:'Type of Work', form_selecione:'Select service', form_outro:'Other', form_mensagem:'Describe your project', form_submit:'Request Free Quote →',
     footer_about:'Specialists in renovation, refurbishment and rehabilitation of properties in Lisbon and the metropolitan area. Over 10 years of excellence.',
@@ -1078,7 +1078,7 @@ const T = {
     faq4_q:'¿Es necesario salir de casa durante las obras?', faq4_a:'Depende del tipo y alcance de la obra. Para remodelaciones completas generalmente lo recomendamos; para obras parciales puede no ser necesario. Cada situación se analiza individualmente.',
     faq5_q:'¿Se encargan del licenciamiento y trámites?', faq5_a:'El licenciamiento y los trámites administrativos son responsabilidad del propietario. En casos de Gestión de Obra completa — especialmente para clientes no residentes en Portugal — podemos, bajo solicitud expresa, coordinar con técnicos especializados. Consúltenos.',
     faq6_q:'¿Qué formas de pago aceptan?', faq6_a:'Aceptamos transferencia bancaria y efectivo. El pago es habitualmente escalonado: entrada en la aprobación del presupuesto y pagos intermedios según el avance, con condiciones definidas en el contrato.',
-    cont_label:'Contacto', cont_title:'Hablemos sobre su obra', cont_desc:'Rellene el formulario o contáctenos directamente. Siempre respondemos en menos de 24 horas.',
+    cont_label:'Contacto', cont_title:'Hablemos sobre su obra', cont_desc:'Rellene el formulario o contáctenos directamente. Responderemos lo antes posible.',
     cont_telefone:'Teléfono / WhatsApp', cont_zona:'Área de Actuación', cont_horario:'Horario', cont_horas:'Lun – Vie: 8h00 – 18h00',
     form_nome:'Nombre', form_telefone:'Teléfono', form_email:'Email', form_servico:'Tipo de Obra', form_selecione:'Seleccione el servicio', form_outro:'Otro', form_mensagem:'Describa su obra', form_submit:'Solicitar Presupuesto →',
     footer_about:'Especialistas en renovación, remodelación y rehabilitación de inmuebles en Lisboa y área metropolitana. Más de 10 años de excelencia.',
@@ -1135,8 +1135,14 @@ window.addEventListener('scroll', () => {
 // ===================== MOBILE MENU =====================
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
-hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
-mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
+function setMobileMenu(open) {
+  mobileMenu.classList.toggle('open', open);
+  mobileMenu.setAttribute('aria-hidden', String(!open));
+  hamburger.setAttribute('aria-expanded', String(open));
+  hamburger.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+}
+hamburger.addEventListener('click', () => setMobileMenu(!mobileMenu.classList.contains('open')));
+mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMobileMenu(false)));
 
 // ===================== HERO PARALLAX =====================
 const heroBg = document.getElementById('heroBg');
@@ -1172,11 +1178,23 @@ document.querySelectorAll('.ba-slider').forEach(slider => {
 });
 
 // ===================== FAQ =====================
-document.querySelectorAll('.faq-item').forEach(item => {
-  item.querySelector('.faq-q').addEventListener('click', () => {
+document.querySelectorAll('.faq-item').forEach((item, index) => {
+  const button = item.querySelector('.faq-q');
+  const answer = item.querySelector('.faq-a');
+  const answerId = `faq-answer-${index + 1}`;
+  answer.id = answerId;
+  button.setAttribute('aria-controls', answerId);
+  button.setAttribute('aria-expanded', 'false');
+  button.addEventListener('click', () => {
     const isOpen = item.classList.contains('open');
-    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-    if (!isOpen) item.classList.add('open');
+    document.querySelectorAll('.faq-item').forEach(i => {
+      i.classList.remove('open');
+      i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+    });
+    if (!isOpen) {
+      item.classList.add('open');
+      button.setAttribute('aria-expanded', 'true');
+    }
   });
 });
 
@@ -1185,18 +1203,32 @@ const banner = document.getElementById('cookie-banner');
 const overlay = document.getElementById('cookie-overlay');
 function showCookieBanner() { banner.classList.add('show'); overlay.classList.add('show'); }
 function hideCookieBanner() { banner.classList.remove('show'); overlay.classList.remove('show'); }
-function saveCookieConsent(analytics, marketing) {
-  const prefs = { necessary:true, analytics, marketing, ts: Date.now(), v:'1' };
-  localStorage.setItem('rm_cookies', JSON.stringify(prefs));
+function applyCookieConsent(analytics, marketing) {
   gtag('consent','update',{
     analytics_storage: analytics?'granted':'denied',
     ad_storage: marketing?'granted':'denied',
     ad_user_data: marketing?'granted':'denied',
     ad_personalization: marketing?'granted':'denied'
   });
+}
+function saveCookieConsent(analytics, marketing) {
+  const prefs = { necessary:true, analytics, marketing, ts: Date.now(), v:'1' };
+  localStorage.setItem('rm_cookies', JSON.stringify(prefs));
+  applyCookieConsent(analytics, marketing);
   hideCookieBanner();
 }
-if (!localStorage.getItem('rm_cookies')) setTimeout(showCookieBanner, 1800);
+const storedCookieConsent = localStorage.getItem('rm_cookies');
+if (storedCookieConsent) {
+  try {
+    const prefs = JSON.parse(storedCookieConsent);
+    applyCookieConsent(Boolean(prefs.analytics), Boolean(prefs.marketing));
+  } catch {
+    localStorage.removeItem('rm_cookies');
+    setTimeout(showCookieBanner, 1800);
+  }
+} else {
+  setTimeout(showCookieBanner, 1800);
+}
 document.getElementById('cookieAcceptAll').addEventListener('click', () => { document.getElementById('ckAnalytics').checked=true; document.getElementById('ckMarketing').checked=true; saveCookieConsent(true,true); });
 document.getElementById('cookieSave').addEventListener('click', () => saveCookieConsent(document.getElementById('ckAnalytics').checked, document.getElementById('ckMarketing').checked));
 document.getElementById('cookieReject').addEventListener('click', () => saveCookieConsent(false,false));

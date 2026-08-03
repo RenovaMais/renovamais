@@ -363,7 +363,7 @@ textarea{min-height:118px;resize:vertical}
           </ul>
         </div>
         <div class="lead-form">
-          <div class="form-priority">Pedido rápido · resposta habitual em 24 horas</div>
+          <div class="form-priority">Pedido rápido · resposta com a maior brevidade possível</div>
           <form action="https://formspree.io/f/xaqzqozo" method="POST" id="bathroomLeadForm">
             <input type="hidden" name="_next" value="https://renovamais.pt/obrigado">
             <input type="hidden" name="_subject" value="Novo pedido - remodelação de casa de banho">
@@ -796,17 +796,31 @@ const banner = document.getElementById('cookie-banner');
 const overlay = document.getElementById('cookie-overlay');
 function showCookieBanner(){banner.classList.add('show');overlay.classList.add('show')}
 function hideCookieBanner(){banner.classList.remove('show');overlay.classList.remove('show')}
-function saveCookieConsent(analytics, marketing){
-  localStorage.setItem('rm_cookies',JSON.stringify({necessary:true,analytics,marketing,ts:Date.now(),v:'1'}));
+function applyCookieConsent(analytics, marketing){
   gtag('consent','update',{
     analytics_storage:analytics?'granted':'denied',
     ad_storage:marketing?'granted':'denied',
     ad_user_data:marketing?'granted':'denied',
     ad_personalization:marketing?'granted':'denied'
   });
+}
+function saveCookieConsent(analytics, marketing){
+  localStorage.setItem('rm_cookies',JSON.stringify({necessary:true,analytics,marketing,ts:Date.now(),v:'1'}));
+  applyCookieConsent(analytics, marketing);
   hideCookieBanner();
 }
-if(!localStorage.getItem('rm_cookies')) setTimeout(showCookieBanner,1200);
+const storedCookieConsent = localStorage.getItem('rm_cookies');
+if(storedCookieConsent){
+  try{
+    const prefs = JSON.parse(storedCookieConsent);
+    applyCookieConsent(Boolean(prefs.analytics),Boolean(prefs.marketing));
+  }catch{
+    localStorage.removeItem('rm_cookies');
+    setTimeout(showCookieBanner,1200);
+  }
+}else{
+  setTimeout(showCookieBanner,1200);
+}
 document.getElementById('cookieAccept').addEventListener('click',()=>saveCookieConsent(true,true));
 document.getElementById('cookieAnalytics').addEventListener('click',()=>saveCookieConsent(true,false));
 document.getElementById('cookieReject').addEventListener('click',()=>saveCookieConsent(false,false));
