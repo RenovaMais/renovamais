@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-PT" dir="ltr">
+<html lang="pt-PT" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -95,11 +95,29 @@
       border-top: 1px solid #1A1A1A;
     }
   </style>
+  <style>
+    [data-theme="light"]{--page-bg:#F5F4F0;--page-surface:#FFFFFF;--page-text:#343434;--page-heading:#1A1A1A;--page-muted:#6B6B6B;--page-border:rgba(0,0,0,.1);--page-accent:#5A9200}
+    [data-theme="dark"]{--page-bg:#0D0D0D;--page-surface:#111111;--page-text:#CCCCCC;--page-heading:#FFFFFF;--page-muted:#777777;--page-border:#1E1E1E;--page-accent:#A8FF00}
+    body{background:var(--page-bg);color:var(--page-text);transition:background .3s,color .3s}
+    header{background:var(--page-surface);border-color:var(--page-border)}
+    .logo,h1{color:var(--page-heading)}
+    .back,h2,a{color:var(--page-accent)}
+    .updated{color:var(--page-muted)}
+    .box{background:var(--page-surface);border-color:var(--page-border)}
+    .header-actions{display:flex;align-items:center;gap:14px}
+    .page-theme-toggle{width:38px;height:38px;border:1px solid var(--page-border);border-radius:50%;background:var(--page-bg);color:var(--page-heading);font-size:1rem;cursor:pointer}
+    @media(max-width:520px){header{padding:1rem}.back{font-size:0}.back::after{content:'←';font-size:1.1rem}}
+  </style>
+  <link rel="stylesheet" href="/css/legal-footer.css">
+  <script src="/js/site-theme.js" defer></script>
 </head>
 <body>
   <header>
     <a href="/" class="logo">Renova<span>Mais</span></a>
-    <a href="/" class="back">← Voltar ao site</a>
+    <div class="header-actions">
+      <button class="page-theme-toggle" type="button" data-theme-toggle aria-label="Mudar para tema escuro" aria-pressed="false"><span data-theme-symbol>☾</span></button>
+      <a href="/" class="back">← Voltar ao site</a>
+    </div>
   </header>
 
   <main>
@@ -185,9 +203,22 @@
     </div>
   </main>
 
-  <footer>
-    &copy; 2026 Renova Mais, LDA · NIF 519467892 — Todos os direitos reservados |
-    <a href="/">Voltar ao site</a>
+  <footer class="legal-footer legal-footer--compact">
+    <div class="legal-footer__inner">
+      <div class="legal-footer__trust" aria-label="Identificação legal e reclamações">
+        <div class="legal-footer__identity">
+          <div class="legal-footer__name">Renova Mais, Lda.</div>
+          <div class="legal-footer__facts">
+            <span><strong>NIF/NIPC</strong> 519467892</span><span><strong>Alvará</strong> 122856-PAR</span>
+            <address class="legal-footer__address">Rua Cesário Verde, n.º 2, cave direita, 2745-741 Massamá, Queluz, Sintra</address>
+            <a href="tel:+351912911081">+351 912 911 081</a><a href="mailto:geral@renovamais.pt">geral@renovamais.pt</a>
+          </div>
+        </div>
+        <a class="legal-footer__action" href="https://www.impic.pt/impic/pt-pt/consultar/empresas-titulares-de-alvara-de-empreiteiro-de-obras-particulares" target="_blank" rel="noopener"><span class="legal-footer__badge">IMPIC</span><small>Consultar oficialmente o alvará 122856-PAR.</small></a>
+        <a class="legal-footer__action legal-footer__complaints" href="https://www.livroreclamacoes.pt/Inicio/" target="_blank" rel="noopener"><span class="legal-footer__badge">Livro de Reclamações</span><small>Aceder à plataforma oficial.</small></a>
+      </div>
+      <div class="legal-footer__bottom"><span>© 2026 Renova Mais, Lda.</span><div class="legal-footer__links"><a href="/privacy">Política de Privacidade e RGPD</a><a href="/">Página principal</a></div></div>
+    </div>
   </footer>
 </body>
 </html>
