@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-PT">
+<html lang="pt-PT" data-theme="light">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -40,11 +40,30 @@ p{font-family:'Poppins',sans-serif;font-size:.9rem;color:rgba(255,255,255,.5);ma
 
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
 </style>
+<style>
+[data-theme="light"]{--page-bg:#F5F4F0;--page-text:#1A1A1A;--page-muted:rgba(0,0,0,.58);--page-border:rgba(0,0,0,.14);--page-number:#E3E1DA;--page-grid:rgba(90,146,0,.07)}
+[data-theme="dark"]{--page-bg:#0D0D0D;--page-text:#FFFFFF;--page-muted:rgba(255,255,255,.5);--page-border:rgba(255,255,255,.12);--page-number:#111111;--page-grid:rgba(168,255,0,.03)}
+html,body{background:var(--page-bg);color:var(--page-text)}
+body{justify-content:flex-start;overflow:auto;padding:0;transition:background .3s,color .3s}
+body::before{background-image:linear-gradient(var(--page-grid) 1px,transparent 1px),linear-gradient(90deg,var(--page-grid) 1px,transparent 1px)}
+.logo{color:var(--page-text)}
+.page-theme-toggle{position:fixed;top:20px;right:24px;z-index:10;width:40px;height:40px;border-radius:50%;border:1px solid var(--page-border);background:var(--page-bg);color:var(--page-text);font-size:1rem;cursor:pointer}
+.error-content{min-height:78vh;display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;padding:100px 24px 54px}
+.num{color:var(--page-number)}
+.error-content p{color:var(--page-muted)}
+.btn-outline{border-color:var(--page-border);color:var(--page-muted)}
+.btn-outline:hover{border-color:#5A9200;color:var(--page-text)}
+.links a{color:var(--page-muted)}
+</style>
+<link rel="stylesheet" href="/css/legal-footer.css">
+<script src="/js/site-theme.js" defer></script>
 </head>
 <body>
 
 <a href="/" class="logo">Renova<span>Mais</span></a>
+<button class="page-theme-toggle" type="button" data-theme-toggle aria-label="Mudar para tema escuro" aria-pressed="false"><span data-theme-symbol>☾</span></button>
 
+<main class="error-content">
 <div class="num">404</div>
 <h1>Página <span>não encontrada</span></h1>
 <p>A página que procura não existe ou foi movida. Comece pelo início e encontre tudo o que precisa.</p>
@@ -60,6 +79,25 @@ p{font-family:'Poppins',sans-serif;font-size:.9rem;color:rgba(255,255,255,.5);ma
   <a href="/#portfolio">Portfolio</a>
   <a href="/#faq">FAQ</a>
 </div>
+</main>
+
+<footer class="legal-footer legal-footer--compact">
+  <div class="legal-footer__inner">
+    <div class="legal-footer__trust" aria-label="Identificação legal e reclamações">
+      <div class="legal-footer__identity">
+        <div class="legal-footer__name">Renova Mais, Lda.</div>
+        <div class="legal-footer__facts">
+          <span><strong>NIF/NIPC</strong> 519467892</span><span><strong>Alvará</strong> 122856-PAR</span>
+          <address class="legal-footer__address">Rua Cesário Verde, n.º 2, cave direita, 2745-741 Massamá, Queluz, Sintra</address>
+          <a href="tel:+351912911081">+351 912 911 081</a><a href="mailto:geral@renovamais.pt">geral@renovamais.pt</a>
+        </div>
+      </div>
+      <a class="legal-footer__action" href="https://www.impic.pt/impic/pt-pt/consultar/empresas-titulares-de-alvara-de-empreiteiro-de-obras-particulares" target="_blank" rel="noopener"><span class="legal-footer__badge">IMPIC</span><small>Consultar oficialmente o alvará 122856-PAR.</small></a>
+      <a class="legal-footer__action legal-footer__complaints" href="https://www.livroreclamacoes.pt/Inicio/" target="_blank" rel="noopener"><span class="legal-footer__badge">Livro de Reclamações</span><small>Aceder à plataforma oficial.</small></a>
+    </div>
+    <div class="legal-footer__bottom"><span>© 2026 Renova Mais, Lda.</span><div class="legal-footer__links"><a href="/privacy">Política de Privacidade e RGPD</a><a href="/">Página principal</a></div></div>
+  </div>
+</footer>
 
 </body>
 </html>

@@ -14,8 +14,10 @@ function Assert-NotMatch {
 }
 
 Assert-Match '<html lang="pt-PT" data-theme="light">' 'The document must start in light theme.'
-Assert-Match "const savedTheme = localStorage\.getItem\('rm_theme'\);" 'The saved theme must be read explicitly.'
-Assert-Match "let isDark = savedTheme === 'dark';" 'A missing preference must fall back to light.'
+Assert-Match '<script src="/js/site-theme.js" defer></script>' 'The shared theme script must be loaded.'
+$themeSource = Get-Content -Raw (Join-Path $projectRoot 'js/site-theme.js')
+if ($themeSource -notmatch "localStorage\.getItem\('rm_theme'\)") { throw 'The saved theme must be read explicitly.' }
+if ($themeSource -notmatch "storedTheme === 'dark' \? 'dark' : 'light'") { throw 'A missing preference must fall back to light.' }
 Assert-Match '--nav-bg:rgba\(13,13,13,.76\)' 'Dark theme navigation background variable is missing.'
 Assert-Match '--nav-bg:rgba\(245,244,240,.84\)' 'Light theme navigation background variable is missing.'
 Assert-Match 'background:var\(--nav-bg\)' 'The navigation strip must use its theme variable.'

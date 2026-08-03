@@ -306,6 +306,8 @@ textarea{min-height:118px;resize:vertical}
   .cookie-actions button{padding:11px 8px;font-size:.7rem}
 }
 </style>
+<link rel="stylesheet" href="/css/legal-footer.css">
+<script src="/js/site-theme.js" defer></script>
 </head>
 <body>
 <nav class="nav">
@@ -323,7 +325,7 @@ textarea{min-height:118px;resize:vertical}
         <button class="lang-btn active" type="button" data-lang="pt">PT</button>
         <button class="lang-btn" type="button" data-lang="en">EN</button>
         <button class="lang-btn" type="button" data-lang="es">ES</button>
-        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Alternar tema">☾</button>
+        <button class="theme-toggle" id="themeToggle" data-theme-toggle type="button" aria-label="Mudar para tema escuro" aria-pressed="false"><span data-theme-symbol>☾</span></button>
       </div>
       <a class="nav-phone" href="tel:+351912911081">+351 912 911 081</a>
       <a class="btn btn-primary" href="#orcamento" data-i18n="nav_cta">Pedir Orçamento</a>
@@ -605,10 +607,33 @@ textarea{min-height:118px;resize:vertical}
   </section>
 </main>
 
-<footer class="footer">
-  <div class="container footer-inner">
-    <span>© 2026 Renova Mais, LDA · NIF 519467892</span>
-    <span><a href="tel:+351912911081">+351 912 911 081</a> · <a href="mailto:geral@renovamais.pt">geral@renovamais.pt</a> · <a href="/privacy">Política de Privacidade</a></span>
+<footer class="legal-footer">
+  <div class="legal-footer__inner">
+    <div class="legal-footer__trust" aria-label="Identificação legal e reclamações">
+      <div class="legal-footer__identity">
+        <div class="legal-footer__eyebrow">Identificação legal</div>
+        <div class="legal-footer__name">Renova Mais, Lda.</div>
+        <div class="legal-footer__facts">
+          <span><strong>NIF/NIPC</strong> 519467892</span>
+          <span><strong>Alvará de Obras Particulares</strong> 122856-PAR</span>
+          <address class="legal-footer__address">Rua Cesário Verde, n.º 2, cave direita, 2745-741 Massamá, Queluz, Sintra</address>
+          <a href="tel:+351912911081">+351 912 911 081</a>
+          <a href="mailto:geral@renovamais.pt">geral@renovamais.pt</a>
+        </div>
+      </div>
+      <a class="legal-footer__action" href="https://www.impic.pt/impic/pt-pt/consultar/empresas-titulares-de-alvara-de-empreiteiro-de-obras-particulares" target="_blank" rel="noopener">
+        <span class="legal-footer__badge">IMPIC</span>
+        <small>Consultar o Alvará de Empreiteiro de Obras Particulares n.º 122856-PAR no portal oficial.</small>
+      </a>
+      <a class="legal-footer__action legal-footer__complaints" href="https://www.livroreclamacoes.pt/Inicio/" target="_blank" rel="noopener">
+        <span class="legal-footer__badge">Livro de Reclamações</span>
+        <small>Aceder à Plataforma Digital oficial.</small>
+      </a>
+    </div>
+    <div class="legal-footer__bottom">
+      <span>© 2026 Renova Mais, Lda. · Todos os direitos reservados.</span>
+      <div class="legal-footer__links"><a href="/privacy">Política de Privacidade e RGPD</a><a href="/">Página principal</a></div>
+    </div>
   </div>
 </footer>
 
@@ -738,18 +763,7 @@ function applyLang(lang){
   });
   document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.toggle('active', btn.dataset.lang === lang));
 }
-function applyTheme(theme){
-  document.documentElement.setAttribute('data-theme', theme);
-  localStorage.setItem('rm_landing_theme', theme);
-  const toggle = document.getElementById('themeToggle');
-  if (toggle) toggle.textContent = theme === 'dark' ? '☀' : '☾';
-}
 document.querySelectorAll('.lang-btn').forEach(btn => btn.addEventListener('click', () => applyLang(btn.dataset.lang)));
-document.getElementById('themeToggle')?.addEventListener('click', () => {
-  const current = document.documentElement.getAttribute('data-theme') || 'light';
-  applyTheme(current === 'dark' ? 'light' : 'dark');
-});
-applyTheme(localStorage.getItem('rm_landing_theme') || 'light');
 applyLang(localStorage.getItem('rm_landing_lang') || 'pt');
 
 const nav = document.querySelector('.nav');
