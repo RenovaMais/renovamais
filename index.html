@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-PT" data-theme="dark">
+<html lang="pt-PT" data-theme="light">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
@@ -70,7 +70,10 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
   --card:#161616;--card2:#1E1E1E;
   --border:rgba(255,255,255,.08);--border2:rgba(168,255,0,.2);
   --shadow:0 8px 40px rgba(0,0,0,.6);
-  --nav-bg:rgba(13,13,13,.92);
+  --nav-bg:rgba(13,13,13,.76);--nav-bg-scrolled:rgba(13,13,13,.94);
+  --nav-border:rgba(255,255,255,.1);--nav-border-scrolled:rgba(255,255,255,.12);
+  --nav-text:#FFFFFF;--nav-text-muted:rgba(255,255,255,.82);--nav-text-subtle:rgba(255,255,255,.62);
+  --nav-separator:rgba(255,255,255,.35);--nav-control-bg:rgba(255,255,255,.08);--nav-control-border:rgba(255,255,255,.16);
 }
 [data-theme="light"]{
   --bg:#F5F4F0;--bg2:#ECEAE4;--bg3:#E0DDD6;
@@ -79,7 +82,10 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
   --card:#FFFFFF;--card2:#F0EEE9;
   --border:rgba(0,0,0,.08);--border2:rgba(90,146,0,.2);
   --shadow:0 8px 40px rgba(0,0,0,.12);
-  --nav-bg:rgba(245,244,240,.92);
+  --nav-bg:rgba(245,244,240,.84);--nav-bg-scrolled:rgba(245,244,240,.96);
+  --nav-border:rgba(0,0,0,.1);--nav-border-scrolled:rgba(0,0,0,.13);
+  --nav-text:#1A1A1A;--nav-text-muted:rgba(0,0,0,.78);--nav-text-subtle:rgba(0,0,0,.58);
+  --nav-separator:rgba(0,0,0,.3);--nav-control-bg:rgba(0,0,0,.06);--nav-control-border:rgba(0,0,0,.14);
 }
 
 /* ===================== TYPOGRAPHY ===================== */
@@ -101,25 +107,25 @@ h1,h2,h3,h4{font-family:'Exo 2',sans-serif;line-height:1.1}
 .reveal.visible{opacity:1;transform:none}
 
 /* ===================== NAVBAR ===================== */
-#navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:16px 0;background:rgba(13,13,13,.76);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.1);transition:background .3s,backdrop-filter .3s,border-bottom .3s}
-#navbar.scrolled{background:rgba(13,13,13,.94);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.12)}
+#navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:16px 0;background:var(--nav-bg);backdrop-filter:blur(16px);border-bottom:1px solid var(--nav-border);transition:background .3s,backdrop-filter .3s,border-bottom .3s}
+#navbar.scrolled{background:var(--nav-bg-scrolled);backdrop-filter:blur(18px);border-bottom:1px solid var(--nav-border-scrolled)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px}
-.nav-logo{font-family:'Exo 2',sans-serif;font-size:1.5rem;font-weight:900;letter-spacing:-.02em;color:#fff}
+.nav-logo{font-family:'Exo 2',sans-serif;font-size:1.5rem;font-weight:900;letter-spacing:-.02em;color:var(--nav-text)}
 .nav-logo span{color:var(--accent)}
 .nav-links{display:flex;align-items:center;gap:32px}
-.nav-links a{font-size:.85rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:rgba(255,255,255,.82);transition:color .2s}
+.nav-links a{font-size:.85rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--nav-text-muted);transition:color .2s}
 .nav-links a:hover{color:var(--accent)}
 .nav-actions{display:flex;align-items:center;gap:12px}
-.lang-btn{font-size:.75rem;font-weight:600;letter-spacing:.08em;padding:4px 8px;border-radius:3px;color:rgba(255,255,255,.62);transition:all .2s}
-.lang-btn.active{color:var(--accent);background:rgba(255,255,255,.1)}
-.lang-btn:hover{color:#fff}
-.lang-sep{color:rgba(255,255,255,.35);font-size:.7rem}
-.theme-toggle{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);transition:all .2s}
+.lang-btn{font-size:.75rem;font-weight:600;letter-spacing:.08em;padding:4px 8px;border-radius:3px;color:var(--nav-text-subtle);transition:all .2s}
+.lang-btn.active{color:var(--accent);background:var(--nav-control-bg)}
+.lang-btn:hover{color:var(--nav-text)}
+.lang-sep{color:var(--nav-separator);font-size:.7rem}
+.theme-toggle{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--nav-text);background:var(--nav-control-bg);border:1px solid var(--nav-control-border);transition:all .2s}
 .theme-toggle:hover{border-color:var(--accent);color:var(--accent)}
 .theme-toggle svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .nav-cta{padding:10px 20px;font-size:.8rem}
 .hamburger{display:none;flex-direction:column;gap:5px;width:32px;cursor:pointer}
-.hamburger span{display:block;height:2px;background:#fff;transition:all .3s;border-radius:2px}
+.hamburger span{display:block;height:2px;background:var(--nav-text);transition:all .3s;border-radius:2px}
 .mobile-menu{display:none;position:fixed;inset:0;background:var(--bg);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:32px}
 .mobile-menu.open{display:flex}
 .mobile-menu a{font-family:'Exo 2',sans-serif;font-size:2rem;font-weight:700;color:var(--text);transition:color .2s}
@@ -1103,7 +1109,8 @@ const html = document.documentElement;
 const toggle = document.getElementById('themeToggle');
 const iconSun = document.getElementById('iconSun');
 const iconMoon = document.getElementById('iconMoon');
-let isDark = localStorage.getItem('rm_theme') !== 'light';
+const savedTheme = localStorage.getItem('rm_theme');
+let isDark = savedTheme === 'dark';
 function applyTheme(dark) {
   isDark = dark;
   html.setAttribute('data-theme', dark ? 'dark' : 'light');
